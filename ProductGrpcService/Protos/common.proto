@@ -1,0 +1,4 @@
+syntax = "proto3";
+package product;
+option csharp_namespace = "ProductGrpcService";
+message EmptyRequest {}
