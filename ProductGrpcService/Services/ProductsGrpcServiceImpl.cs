@@ -5,6 +5,7 @@ namespace ProductGrpcService.Services
 {
     public class ProductsGrpcServiceImpl : ProductService.ProductServiceBase
     {
+
         private readonly ILogger<ProductsGrpcServiceImpl> _logger;
 
         public ProductsGrpcServiceImpl(ILogger<ProductsGrpcServiceImpl> logger) => _logger = logger;
@@ -47,9 +48,8 @@ namespace ProductGrpcService.Services
             
             return Task.FromResult(response);
         }
-        
-        
-       
+
+      
 
         private List<ReviewResponse> GetMockReviewList()
         {
