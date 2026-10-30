@@ -4,7 +4,6 @@ namespace ProductGrpcService.Extension
 {
     public static class ServiceExtensions
     {
-        // 1. Extension method to automatically map all gRPC services
         public static WebApplication MapAllGrpcServices(this WebApplication app)
         {
             var grpcServiceTypes = Assembly.GetExecutingAssembly().GetTypes()
@@ -21,16 +20,6 @@ namespace ProductGrpcService.Extension
             }
 
             return app;
-        }
-
-        // 2. Extension method to keep GraphQL service configuration clean
-        public static IServiceCollection AddCustomGraphQL(this IServiceCollection services)
-        {
-            services.AddGraphQLServer()
-                .AddQueryType(d => d.Name("Query"))
-                .AddTypesesFromAssembly(typeof(ServiceExtensions).Assembly);
-
-            return services;
         }
     }
 }

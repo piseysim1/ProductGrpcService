@@ -1,7 +1,6 @@
 ﻿using Grpc.Core;
-using Microsoft.Extensions.Logging;
-using ProductGrpcService;
-
+using CategoryGrpcService;
+using ProductGrpcService.Data;
 namespace ProductGrpcService.Services
 {
     public class ProductsGrpcServiceImpl : ProductService.ProductServiceBase
@@ -27,8 +26,8 @@ namespace ProductGrpcService.Services
             var product = GetMockProductList().FirstOrDefault(p => p.Id == request.Id)
                               ?? GetMockProductList().First();
 
-            var category = GetMockCategoryList().FirstOrDefault(c => c.Id == product.CategoryId)
-                             ?? GetMockCategoryList().First();
+            var category = CategoryData.GetMockCategoryList().FirstOrDefault(c => c.Id == product.CategoryId)
+                             ?? CategoryData.GetMockCategoryList().First();
             
             
 
@@ -50,38 +49,7 @@ namespace ProductGrpcService.Services
         }
         
         
-        private List<CategoryResponse> GetMockCategoryList()
-        {
-            return new List<CategoryResponse>
-            {
-
-                new CategoryResponse 
-                { 
-                    Id = 1, 
-                    Name = "Accessories", 
-                    Note = "PC Hardware & Peripherals" 
-                },
-                new CategoryResponse 
-                { 
-                    Id = 2, 
-                    Name = "Displays", 
-                    Note = "Monitors & Screens" 
-                },
-                new CategoryResponse 
-                { 
-                    Id = 3, 
-                    Name = "Audio", 
-                    Note = "Headsets & Speakers" 
-                },
-                new CategoryResponse 
-                { 
-                    Id = 4, 
-                    Name = "Cables & Hubs", 
-                    Note = "Connectivity" 
-                }
-            };
-        }
-
+       
 
         private List<ReviewResponse> GetMockReviewList()
         {
@@ -103,6 +71,8 @@ namespace ProductGrpcService.Services
                 }
             };
         }
+       
+        
         private List<ProductResponse> GetMockProductList()
         {
             return new List<ProductResponse>

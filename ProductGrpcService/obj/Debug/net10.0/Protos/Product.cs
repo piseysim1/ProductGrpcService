@@ -30,20 +30,20 @@ namespace ProductGrpcService {
             "c2UiIAoSUHJvZHVjdEJ5SWRSZXF1ZXN0EgoKAmlkGAEgASgFImMKD1Byb2R1",
             "Y3RSZXNwb25zZRIKCgJpZBgBIAEoBRIMCgRuYW1lGAIgASgJEhMKC2Rlc2Ny",
             "aXB0aW9uGAMgASgJEg0KBXByaWNlGAQgASgBEhIKCmNhdGVnb3J5SWQYBSAB",
-            "KAUizgEKGkZ1bGxQcm9kdWN0RGV0YWlsc1Jlc3BvbnNlEioKCHByb2R1Y3Rz",
+            "KAUizwEKGkZ1bGxQcm9kdWN0RGV0YWlsc1Jlc3BvbnNlEioKCHByb2R1Y3Rz",
             "GAEgASgLMhgucHJvZHVjdC5Qcm9kdWN0UmVzcG9uc2USLQoJaW52ZW50b3J5",
-            "GAIgASgLMhoucHJvZHVjdC5JbnZlbnRvcnlSZXNwb25zZRIrCghjYXRlZ29y",
-            "eRgDIAEoCzIZLnByb2R1Y3QuQ2F0ZWdvcnlSZXNwb25zZRIoCgdyZXZpZXdz",
-            "GAQgAygLMhcucHJvZHVjdC5SZXZpZXdSZXNwb25zZSJTCg5SZXZpZXdSZXNw",
-            "b25zZRIKCgJpZBgBIAEoBRIOCgZyYXRpbmcYAiABKAUSDwoHY29tbWVudBgD",
-            "IAEoCRIUCgxyZXZpZXdlck5hbWUYBCABKAkyqwEKDlByb2R1Y3RTZXJ2aWNl",
-            "EkUKDkdldEFsbFByb2R1Y3RzEhUucHJvZHVjdC5FbXB0eVJlcXVlc3QaHC5w",
-            "cm9kdWN0LlByb2R1Y3RMaXN0UmVzcG9uc2USUgoOR2V0UHJvZHVjdEJ5SWQS",
-            "Gy5wcm9kdWN0LlByb2R1Y3RCeUlkUmVxdWVzdBojLnByb2R1Y3QuRnVsbFBy",
-            "b2R1Y3REZXRhaWxzUmVzcG9uc2VCFaoCElByb2R1Y3RHcnBjU2VydmljZWIG",
-            "cHJvdG8z"));
+            "GAIgASgLMhoucHJvZHVjdC5JbnZlbnRvcnlSZXNwb25zZRIsCghjYXRlZ29y",
+            "eRgDIAEoCzIaLmNhdGVnb3J5LkNhdGVnb3J5UmVzcG9uc2USKAoHcmV2aWV3",
+            "cxgEIAMoCzIXLnByb2R1Y3QuUmV2aWV3UmVzcG9uc2UiUwoOUmV2aWV3UmVz",
+            "cG9uc2USCgoCaWQYASABKAUSDgoGcmF0aW5nGAIgASgFEg8KB2NvbW1lbnQY",
+            "AyABKAkSFAoMcmV2aWV3ZXJOYW1lGAQgASgJMqsBCg5Qcm9kdWN0U2Vydmlj",
+            "ZRJFCg5HZXRBbGxQcm9kdWN0cxIVLnByb2R1Y3QuRW1wdHlSZXF1ZXN0Ghwu",
+            "cHJvZHVjdC5Qcm9kdWN0TGlzdFJlc3BvbnNlElIKDkdldFByb2R1Y3RCeUlk",
+            "EhsucHJvZHVjdC5Qcm9kdWN0QnlJZFJlcXVlc3QaIy5wcm9kdWN0LkZ1bGxQ",
+            "cm9kdWN0RGV0YWlsc1Jlc3BvbnNlQhWqAhJQcm9kdWN0R3JwY1NlcnZpY2Vi",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::ProductGrpcService.CommonReflection.Descriptor, global::ProductGrpcService.CategoryReflection.Descriptor, global::ProductGrpcService.InventoryReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::ProductGrpcService.CommonReflection.Descriptor, global::CategoryGrpcService.CategoryReflection.Descriptor, global::ProductGrpcService.InventoryReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::ProductGrpcService.ProductListResponse), global::ProductGrpcService.ProductListResponse.Parser, new[]{ "Product" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ProductGrpcService.ProductByIdRequest), global::ProductGrpcService.ProductByIdRequest.Parser, new[]{ "Id" }, null, null, null, null),
@@ -861,10 +861,10 @@ namespace ProductGrpcService {
 
     /// <summary>Field number for the "category" field.</summary>
     public const int CategoryFieldNumber = 3;
-    private global::ProductGrpcService.CategoryResponse category_;
+    private global::CategoryGrpcService.CategoryResponse category_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::ProductGrpcService.CategoryResponse Category {
+    public global::CategoryGrpcService.CategoryResponse Category {
       get { return category_; }
       set {
         category_ = value;
@@ -1012,7 +1012,7 @@ namespace ProductGrpcService {
       }
       if (other.category_ != null) {
         if (category_ == null) {
-          Category = new global::ProductGrpcService.CategoryResponse();
+          Category = new global::CategoryGrpcService.CategoryResponse();
         }
         Category.MergeFrom(other.Category);
       }
@@ -1052,7 +1052,7 @@ namespace ProductGrpcService {
           }
           case 26: {
             if (category_ == null) {
-              Category = new global::ProductGrpcService.CategoryResponse();
+              Category = new global::CategoryGrpcService.CategoryResponse();
             }
             input.ReadMessage(Category);
             break;
@@ -1096,7 +1096,7 @@ namespace ProductGrpcService {
           }
           case 26: {
             if (category_ == null) {
-              Category = new global::ProductGrpcService.CategoryResponse();
+              Category = new global::CategoryGrpcService.CategoryResponse();
             }
             input.ReadMessage(Category);
             break;

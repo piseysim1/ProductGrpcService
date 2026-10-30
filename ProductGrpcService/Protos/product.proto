@@ -37,7 +37,7 @@ message ProductResponse{
 message FullProductDetailsResponse {
    ProductResponse products =1;
    InventoryResponse inventory = 2;
-   CategoryResponse category = 3;
+   category.CategoryResponse category = 3;
    repeated ReviewResponse reviews = 4;
 }
 
