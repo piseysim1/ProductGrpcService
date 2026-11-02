@@ -2,7 +2,22 @@ syntax = "proto3";
 
 option csharp_namespace = "ProductGrpcService";
 
-package product;
+package inventory;
+
+service InventoryService {
+    rpc GetAllInventories (GetAllInventoryRequest) returns (InventoryListResponse);
+    rpc GetInventoryById (InventoryByIdRequest) returns (InventoryResponse);
+}
+
+message GetAllInventoryRequest  {}
+
+message InventoryByIdRequest {	
+    int32 id = 1;
+}
+
+message InventoryListResponse {
+    repeated InventoryResponse inventory = 1;
+}
 
 message InventoryResponse
 {

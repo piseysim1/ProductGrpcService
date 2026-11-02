@@ -1,37 +1,28 @@
-﻿using CategoryGrpcService;
-
-namespace ProductGrpcService.Data
+﻿namespace ProductGrpcService.Data
 {
-    public  class CategoryData
+    public static class CategoryData
     {
         public static List<CategoryResponse> GetMockCategoryList()
         {
             return new List<CategoryResponse>
             {
-
                 new CategoryResponse
                 {
                     Id = 1,
-                    Name = "Accessories",
-                    Note = "PC Hardware & Peripherals"
+                    Name = "Electronics",
+                    Description = "Electronic products"
                 },
                 new CategoryResponse
                 {
                     Id = 2,
-                    Name = "Displays",
-                    Note = "Monitors & Screens"
+                    Name = "Accessories",
+                    Description = "Computer accessories"
                 },
                 new CategoryResponse
                 {
                     Id = 3,
-                    Name = "Audio",
-                    Note = "Headsets & Speakers"
-                },
-                new CategoryResponse
-                {
-                    Id = 4,
-                    Name = "Cables & Hubs",
-                    Note = "Connectivity"
+                    Name = "Monitors",
+                    Description = "Computer monitors and displays"
                 }
             };
         }

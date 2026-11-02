@@ -7,10 +7,9 @@ namespace ProductGrpcService.Extension
         public static WebApplication MapAllGrpcServices(
             this WebApplication app)
         {
-            app.MapGrpcService<ProductsGrpcServiceImpl>();
-
-            app.MapGrpcService<CategoriesGrpcServiceImpl>();
-
+            app.MapGrpcService<ProductsService>();
+            app.MapGrpcService<CategoriesService>();
+            app.MapGrpcService<InventorysService>();
             return app;
         }
     }

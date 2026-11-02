@@ -1,26 +1,28 @@
 syntax = "proto3";
 
+option csharp_namespace = "ProductGrpcService";
+
 package category;
 
-option csharp_namespace = "CategoryGrpcService";
-
 service CategoryService {
-  rpc GetAllCategories (EmptyRequest) returns (CategoryListResponse);
-  rpc GetCategoryById (CategoryByIdRequest) returns (CategoryResponse);
+    rpc GetAllCategories (GetAllCategoriesRequest) returns (CategoryListResponse);
+    rpc GetCategoryById (CategoryByIdRequest) returns (CategoryResponse);
 }
 
-message EmptyRequest {}
+message GetAllCategoriesRequest  
+{
+}
 
 message CategoryByIdRequest {
-  int32 id = 1;
+    int32 id = 1;
 }
 
 message CategoryListResponse {
-  repeated CategoryResponse categories = 1;
+    repeated CategoryResponse categories = 1;
 }
 
 message CategoryResponse {
-  int32 id = 1;
-  string name = 2;
-  string note = 3;
+    int32 id = 1;
+    string name = 2;
+    string description = 3;
 }

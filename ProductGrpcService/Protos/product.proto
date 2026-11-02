@@ -3,23 +3,18 @@ syntax = "proto3";
 option csharp_namespace = "ProductGrpcService";
 
 package product;
-import "common.proto";
-import "category.proto";
-import "inventory.proto";
 
-// The greeting service definition.
 service ProductService {
-  // Sends a greeting
-  rpc GetAllProducts (EmptyRequest) returns (ProductListResponse);
-  rpc GetProductById (ProductByIdRequest) returns (FullProductDetailsResponse);
+  rpc GetAllProducts (GetAllProductsRequest) returns (ProductListResponse);
+  rpc GetProductById (ProductByIdRequest) returns (ProductResponse);
 }
+message GetAllProductsRequest {}
 
 message ProductListResponse
 {
 	repeated ProductResponse product =1; 
 }
 
-// The request message containing the user's name.
 
 message ProductByIdRequest {
   int32 id = 1;
@@ -30,20 +25,6 @@ message ProductResponse{
 	string name = 2;
 	string description = 3;
 	double price = 4;
-	int32 categoryId = 5;
-}
-// response joins Product, Categories, Invertory, and Review  
-
-message FullProductDetailsResponse {
-   ProductResponse products =1;
-   InventoryResponse inventory = 2;
-   category.CategoryResponse category = 3;
-   repeated ReviewResponse reviews = 4;
-}
-
-message ReviewResponse {
-  int32 id = 1;
-  int32 rating = 2;
-  string comment = 3;
-  string reviewerName = 4;
+	int32 categoryId = 5;		
+	int32 inventoryId= 6;
 }

@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace CategoryGrpcService {
+namespace ProductGrpcService {
 
   /// <summary>Holder for reflection information generated from category.proto</summary>
   public static partial class CategoryReflection {
@@ -24,23 +24,23 @@ namespace CategoryGrpcService {
     static CategoryReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg5jYXRlZ29yeS5wcm90bxIIY2F0ZWdvcnkiDgoMRW1wdHlSZXF1ZXN0IiEK",
-            "E0NhdGVnb3J5QnlJZFJlcXVlc3QSCgoCaWQYASABKAUiRgoUQ2F0ZWdvcnlM",
-            "aXN0UmVzcG9uc2USLgoKY2F0ZWdvcmllcxgBIAMoCzIaLmNhdGVnb3J5LkNh",
-            "dGVnb3J5UmVzcG9uc2UiOgoQQ2F0ZWdvcnlSZXNwb25zZRIKCgJpZBgBIAEo",
-            "BRIMCgRuYW1lGAIgASgJEgwKBG5vdGUYAyABKAkyqwEKD0NhdGVnb3J5U2Vy",
-            "dmljZRJKChBHZXRBbGxDYXRlZ29yaWVzEhYuY2F0ZWdvcnkuRW1wdHlSZXF1",
-            "ZXN0Gh4uY2F0ZWdvcnkuQ2F0ZWdvcnlMaXN0UmVzcG9uc2USTAoPR2V0Q2F0",
-            "ZWdvcnlCeUlkEh0uY2F0ZWdvcnkuQ2F0ZWdvcnlCeUlkUmVxdWVzdBoaLmNh",
-            "dGVnb3J5LkNhdGVnb3J5UmVzcG9uc2VCFqoCE0NhdGVnb3J5R3JwY1NlcnZp",
-            "Y2ViBnByb3RvMw=="));
+            "Cg5jYXRlZ29yeS5wcm90bxIIY2F0ZWdvcnkiGQoXR2V0QWxsQ2F0ZWdvcmll",
+            "c1JlcXVlc3QiIQoTQ2F0ZWdvcnlCeUlkUmVxdWVzdBIKCgJpZBgBIAEoBSJG",
+            "ChRDYXRlZ29yeUxpc3RSZXNwb25zZRIuCgpjYXRlZ29yaWVzGAEgAygLMhou",
+            "Y2F0ZWdvcnkuQ2F0ZWdvcnlSZXNwb25zZSJBChBDYXRlZ29yeVJlc3BvbnNl",
+            "EgoKAmlkGAEgASgFEgwKBG5hbWUYAiABKAkSEwoLZGVzY3JpcHRpb24YAyAB",
+            "KAkytgEKD0NhdGVnb3J5U2VydmljZRJVChBHZXRBbGxDYXRlZ29yaWVzEiEu",
+            "Y2F0ZWdvcnkuR2V0QWxsQ2F0ZWdvcmllc1JlcXVlc3QaHi5jYXRlZ29yeS5D",
+            "YXRlZ29yeUxpc3RSZXNwb25zZRJMCg9HZXRDYXRlZ29yeUJ5SWQSHS5jYXRl",
+            "Z29yeS5DYXRlZ29yeUJ5SWRSZXF1ZXN0GhouY2F0ZWdvcnkuQ2F0ZWdvcnlS",
+            "ZXNwb25zZUIVqgISUHJvZHVjdEdycGNTZXJ2aWNlYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::CategoryGrpcService.EmptyRequest), global::CategoryGrpcService.EmptyRequest.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::CategoryGrpcService.CategoryByIdRequest), global::CategoryGrpcService.CategoryByIdRequest.Parser, new[]{ "Id" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::CategoryGrpcService.CategoryListResponse), global::CategoryGrpcService.CategoryListResponse.Parser, new[]{ "Categories" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::CategoryGrpcService.CategoryResponse), global::CategoryGrpcService.CategoryResponse.Parser, new[]{ "Id", "Name", "Note" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::ProductGrpcService.GetAllCategoriesRequest), global::ProductGrpcService.GetAllCategoriesRequest.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ProductGrpcService.CategoryByIdRequest), global::ProductGrpcService.CategoryByIdRequest.Parser, new[]{ "Id" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ProductGrpcService.CategoryListResponse), global::ProductGrpcService.CategoryListResponse.Parser, new[]{ "Categories" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ProductGrpcService.CategoryResponse), global::ProductGrpcService.CategoryResponse.Parser, new[]{ "Id", "Name", "Description" }, null, null, null, null)
           }));
     }
     #endregion
@@ -48,21 +48,21 @@ namespace CategoryGrpcService {
   }
   #region Messages
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class EmptyRequest : pb::IMessage<EmptyRequest>
+  public sealed partial class GetAllCategoriesRequest : pb::IMessage<GetAllCategoriesRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<EmptyRequest> _parser = new pb::MessageParser<EmptyRequest>(() => new EmptyRequest());
+    private static readonly pb::MessageParser<GetAllCategoriesRequest> _parser = new pb::MessageParser<GetAllCategoriesRequest>(() => new GetAllCategoriesRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<EmptyRequest> Parser { get { return _parser; } }
+    public static pb::MessageParser<GetAllCategoriesRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::CategoryGrpcService.CategoryReflection.Descriptor.MessageTypes[0]; }
+      get { return global::ProductGrpcService.CategoryReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -73,7 +73,7 @@ namespace CategoryGrpcService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public EmptyRequest() {
+    public GetAllCategoriesRequest() {
       OnConstruction();
     }
 
@@ -81,25 +81,25 @@ namespace CategoryGrpcService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public EmptyRequest(EmptyRequest other) : this() {
+    public GetAllCategoriesRequest(GetAllCategoriesRequest other) : this() {
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public EmptyRequest Clone() {
-      return new EmptyRequest(this);
+    public GetAllCategoriesRequest Clone() {
+      return new GetAllCategoriesRequest(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as EmptyRequest);
+      return Equals(other as GetAllCategoriesRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(EmptyRequest other) {
+    public bool Equals(GetAllCategoriesRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -159,7 +159,7 @@ namespace CategoryGrpcService {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(EmptyRequest other) {
+    public void MergeFrom(GetAllCategoriesRequest other) {
       if (other == null) {
         return;
       }
@@ -223,7 +223,7 @@ namespace CategoryGrpcService {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::CategoryGrpcService.CategoryReflection.Descriptor.MessageTypes[1]; }
+      get { return global::ProductGrpcService.CategoryReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -421,7 +421,7 @@ namespace CategoryGrpcService {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::CategoryGrpcService.CategoryReflection.Descriptor.MessageTypes[2]; }
+      get { return global::ProductGrpcService.CategoryReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -453,12 +453,12 @@ namespace CategoryGrpcService {
 
     /// <summary>Field number for the "categories" field.</summary>
     public const int CategoriesFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::CategoryGrpcService.CategoryResponse> _repeated_categories_codec
-        = pb::FieldCodec.ForMessage(10, global::CategoryGrpcService.CategoryResponse.Parser);
-    private readonly pbc::RepeatedField<global::CategoryGrpcService.CategoryResponse> categories_ = new pbc::RepeatedField<global::CategoryGrpcService.CategoryResponse>();
+    private static readonly pb::FieldCodec<global::ProductGrpcService.CategoryResponse> _repeated_categories_codec
+        = pb::FieldCodec.ForMessage(10, global::ProductGrpcService.CategoryResponse.Parser);
+    private readonly pbc::RepeatedField<global::ProductGrpcService.CategoryResponse> categories_ = new pbc::RepeatedField<global::ProductGrpcService.CategoryResponse>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::CategoryGrpcService.CategoryResponse> Categories {
+    public pbc::RepeatedField<global::ProductGrpcService.CategoryResponse> Categories {
       get { return categories_; }
     }
 
@@ -608,7 +608,7 @@ namespace CategoryGrpcService {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::CategoryGrpcService.CategoryReflection.Descriptor.MessageTypes[3]; }
+      get { return global::ProductGrpcService.CategoryReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -630,7 +630,7 @@ namespace CategoryGrpcService {
     public CategoryResponse(CategoryResponse other) : this() {
       id_ = other.id_;
       name_ = other.name_;
-      note_ = other.note_;
+      description_ = other.description_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -664,15 +664,15 @@ namespace CategoryGrpcService {
       }
     }
 
-    /// <summary>Field number for the "note" field.</summary>
-    public const int NoteFieldNumber = 3;
-    private string note_ = "";
+    /// <summary>Field number for the "description" field.</summary>
+    public const int DescriptionFieldNumber = 3;
+    private string description_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Note {
-      get { return note_; }
+    public string Description {
+      get { return description_; }
       set {
-        note_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -693,7 +693,7 @@ namespace CategoryGrpcService {
       }
       if (Id != other.Id) return false;
       if (Name != other.Name) return false;
-      if (Note != other.Note) return false;
+      if (Description != other.Description) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -703,7 +703,7 @@ namespace CategoryGrpcService {
       int hash = 1;
       if (Id != 0) hash ^= Id.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (Note.Length != 0) hash ^= Note.GetHashCode();
+      if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -730,9 +730,9 @@ namespace CategoryGrpcService {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Note.Length != 0) {
+      if (Description.Length != 0) {
         output.WriteRawTag(26);
-        output.WriteString(Note);
+        output.WriteString(Description);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -752,9 +752,9 @@ namespace CategoryGrpcService {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (Note.Length != 0) {
+      if (Description.Length != 0) {
         output.WriteRawTag(26);
-        output.WriteString(Note);
+        output.WriteString(Description);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -772,8 +772,8 @@ namespace CategoryGrpcService {
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
-      if (Note.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Note);
+      if (Description.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -793,8 +793,8 @@ namespace CategoryGrpcService {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
-      if (other.Note.Length != 0) {
-        Note = other.Note;
+      if (other.Description.Length != 0) {
+        Description = other.Description;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -824,7 +824,7 @@ namespace CategoryGrpcService {
             break;
           }
           case 26: {
-            Note = input.ReadString();
+            Description = input.ReadString();
             break;
           }
         }
@@ -855,7 +855,7 @@ namespace CategoryGrpcService {
             break;
           }
           case 26: {
-            Note = input.ReadString();
+            Description = input.ReadString();
             break;
           }
         }
