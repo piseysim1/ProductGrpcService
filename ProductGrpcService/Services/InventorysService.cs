@@ -23,6 +23,8 @@ namespace ProductGrpcService.Services
             return Task.FromResult(response);
         }
 
+
+
         public override Task<InventoryResponse> GetInventoryById(InventoryByIdRequest request, ServerCallContext context)
         {
             _logger.LogInformation("Fetching inventory details for ID: {Id}", request.Id);
@@ -37,5 +39,7 @@ namespace ProductGrpcService.Services
 
             return Task.FromResult(inventory);
         }
+
+        
     }
 }

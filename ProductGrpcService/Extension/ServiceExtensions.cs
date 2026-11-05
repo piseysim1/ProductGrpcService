@@ -4,6 +4,7 @@ namespace ProductGrpcService.Extension
 {
     public static class ServiceExtensions
     {
+        
         public static WebApplication MapAllGrpcServices(
             this WebApplication app)
         {

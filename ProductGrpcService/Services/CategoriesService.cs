@@ -42,7 +42,7 @@ namespace ProductGrpcService.Services
                 throw new RpcException(
                     new Status(StatusCode.NotFound, "Category not found."));
             }
-
+                    
             return Task.FromResult(category);
         }
     }

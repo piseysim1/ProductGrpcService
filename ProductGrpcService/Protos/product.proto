@@ -7,8 +7,21 @@ package product;
 service ProductService {
   rpc GetAllProducts (GetAllProductsRequest) returns (ProductListResponse);
   rpc GetProductById (ProductByIdRequest) returns (ProductResponse);
+  rpc AddProducts (AddProduct) returns(ProductResponse);
+  rpc UpdateProductResponse(UpdateProductRequest) returns (ProductResponse);
 }
-message GetAllProductsRequest {}
+message GetAllProductsRequest 
+{	
+
+}
+
+message AddProduct{
+	string name = 2;
+	string description = 3;
+	double price = 4;
+	int32 categoryId = 5;		
+	int32 inventoryId= 6;
+}
 
 message ProductListResponse
 {
@@ -21,6 +34,15 @@ message ProductByIdRequest {
 }
 
 message ProductResponse{
+	int32 id = 1;
+	string name = 2;
+	string description = 3;
+	double price = 4;
+	int32 categoryId = 5;		
+	int32 inventoryId= 6;
+}
+
+message UpdateProductRequest {
 	int32 id = 1;
 	string name = 2;
 	string description = 3;
