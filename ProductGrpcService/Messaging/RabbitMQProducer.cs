@@ -1,5 +1,4 @@
-﻿using System.Text;
-using Microsoft.Extensions.Configuration;
+﻿using System.Text.Json;
 using RabbitMQ.Client;
 
 namespace ProductGrpcService.Messaging
@@ -8,37 +7,73 @@ namespace ProductGrpcService.Messaging
     {
         private readonly IConfiguration _configuration;
 
+        private const string QueueName = "product_queue";
+        private const string DeadLetterQueue = "product_dlq";
+
         public RabbitMQProducer(IConfiguration configuration)
         {
             _configuration = configuration;
         }
 
-        public async void PublishProductEvent(string message)
+        public async Task PublishProductUpdateAsync(
+            UpdateProductCommand command)
         {
-            var factory = new ConnectionFactory()
+            var connectionString =
+                _configuration.GetConnectionString("RabbitMQ")
+                ?? throw new InvalidOperationException(
+                    "RabbitMQ connection string is missing.");
+
+            var factory = new ConnectionFactory
             {
-                Uri = new Uri(_configuration.GetConnectionString("RabbitMQ")!)
+                Uri = new Uri(connectionString)
             };
 
-            using var connection = await factory.CreateConnectionAsync();
-            using var channel = await connection.CreateChannelAsync();
+            await using var connection =
+                await factory.CreateConnectionAsync();
+
+            await using var channel =
+                await connection.CreateChannelAsync();
+
+            
+            await channel.QueueDeclareAsync(
+                queue: DeadLetterQueue,
+                durable: true,
+                exclusive: false,
+                autoDelete: false);
+
+            
+            var arguments = new Dictionary<string, object>
+            {
+                ["x-dead-letter-exchange"] = "",
+                ["x-dead-letter-routing-key"] = DeadLetterQueue
+            };
 
             await channel.QueueDeclareAsync(
-                queue: "product_queue",
+                queue: QueueName,
                 durable: true,
                 exclusive: false,
                 autoDelete: false,
-                arguments: null
-            );
+                arguments: arguments);
 
-            var body = Encoding.UTF8.GetBytes(message);
+            
+            var body = JsonSerializer.SerializeToUtf8Bytes(command);
+
+            var properties = new BasicProperties
+            {
+                Persistent = true,
+                ContentType = "application/json"
+            };
+
+            
             await channel.BasicPublishAsync(
                 exchange: "",
-                routingKey: "product_queue",
-                body: body
-            );
+                routingKey: QueueName,
+                mandatory: true,
+                basicProperties: properties,
+                body: body);
 
-            Console.WriteLine($" [x] Published Event to RabbitMQ: {message}");
+            Console.WriteLine(
+                $"public message the product update: {command.RequestId}");
         }
     }
 }

@@ -8,7 +8,13 @@ service ProductService {
   rpc GetAllProducts (GetAllProductsRequest) returns (ProductListResponse);
   rpc GetProductById (ProductByIdRequest) returns (ProductResponse);
   rpc AddProducts (AddProduct) returns(ProductResponse);
-  rpc UpdateProductResponse(UpdateProductRequest) returns (ProductResponse);
+ rpc UpdateProductResponse(UpdateProductRequest)
+    returns (QueueAcceptedResponse);
+}
+message QueueAcceptedResponse {
+    string requestId = 1;
+    bool accepted = 2;
+    string message = 3;
 }
 message GetAllProductsRequest 
 {	

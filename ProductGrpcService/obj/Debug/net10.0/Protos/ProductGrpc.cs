@@ -57,6 +57,8 @@ namespace ProductGrpcService {
     static readonly grpc::Marshaller<global::ProductGrpcService.AddProduct> __Marshaller_product_AddProduct = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ProductGrpcService.AddProduct.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::ProductGrpcService.UpdateProductRequest> __Marshaller_product_UpdateProductRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ProductGrpcService.UpdateProductRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::ProductGrpcService.QueueAcceptedResponse> __Marshaller_product_QueueAcceptedResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ProductGrpcService.QueueAcceptedResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::ProductGrpcService.GetAllProductsRequest, global::ProductGrpcService.ProductListResponse> __Method_GetAllProducts = new grpc::Method<global::ProductGrpcService.GetAllProductsRequest, global::ProductGrpcService.ProductListResponse>(
@@ -83,12 +85,12 @@ namespace ProductGrpcService {
         __Marshaller_product_ProductResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::ProductGrpcService.UpdateProductRequest, global::ProductGrpcService.ProductResponse> __Method_UpdateProductResponse = new grpc::Method<global::ProductGrpcService.UpdateProductRequest, global::ProductGrpcService.ProductResponse>(
+    static readonly grpc::Method<global::ProductGrpcService.UpdateProductRequest, global::ProductGrpcService.QueueAcceptedResponse> __Method_UpdateProductResponse = new grpc::Method<global::ProductGrpcService.UpdateProductRequest, global::ProductGrpcService.QueueAcceptedResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "UpdateProductResponse",
         __Marshaller_product_UpdateProductRequest,
-        __Marshaller_product_ProductResponse);
+        __Marshaller_product_QueueAcceptedResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -119,7 +121,7 @@ namespace ProductGrpcService {
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::ProductGrpcService.ProductResponse> UpdateProductResponse(global::ProductGrpcService.UpdateProductRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::ProductGrpcService.QueueAcceptedResponse> UpdateProductResponse(global::ProductGrpcService.UpdateProductRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -148,7 +150,7 @@ namespace ProductGrpcService {
       serviceBinder.AddMethod(__Method_GetAllProducts, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ProductGrpcService.GetAllProductsRequest, global::ProductGrpcService.ProductListResponse>(serviceImpl.GetAllProducts));
       serviceBinder.AddMethod(__Method_GetProductById, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ProductGrpcService.ProductByIdRequest, global::ProductGrpcService.ProductResponse>(serviceImpl.GetProductById));
       serviceBinder.AddMethod(__Method_AddProducts, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ProductGrpcService.AddProduct, global::ProductGrpcService.ProductResponse>(serviceImpl.AddProducts));
-      serviceBinder.AddMethod(__Method_UpdateProductResponse, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ProductGrpcService.UpdateProductRequest, global::ProductGrpcService.ProductResponse>(serviceImpl.UpdateProductResponse));
+      serviceBinder.AddMethod(__Method_UpdateProductResponse, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::ProductGrpcService.UpdateProductRequest, global::ProductGrpcService.QueueAcceptedResponse>(serviceImpl.UpdateProductResponse));
     }
 
   }

@@ -2,19 +2,19 @@
 using Grpc.Core;
 using Microsoft.EntityFrameworkCore;
 using ProductGrpcService.Domain;
-using ProductGrpcService.Messaging; 
+using ProductGrpcService.Messaging;
 namespace ProductGrpcService.Services
 {
     public class ProductsService(
         ILogger<ProductsService> logger,
         SampleDbContext db,
         IMapper mapper,
-        RabbitMQProducer producer) : ProductService.ProductServiceBase 
+        RabbitMQProducer producer) : ProductService.ProductServiceBase
     {
         private readonly ILogger<ProductsService> _logger = logger;
         private readonly SampleDbContext _db = db;
         private readonly IMapper _mapper = mapper;
-        private readonly RabbitMQProducer _producer = producer; 
+        private readonly RabbitMQProducer _producer = producer;
 
         public override async Task<ProductListResponse> GetAllProducts(GetAllProductsRequest request, ServerCallContext context)
         {
@@ -22,11 +22,11 @@ namespace ProductGrpcService.Services
 
             var response = new ProductListResponse();
 
-           
+
             var mappedProducts = _mapper.Map<IEnumerable<ProductResponse>>(entity);
 
             response.Product.AddRange(mappedProducts);
-          
+
             await _db.SaveChangesAsync();
             return response;
         }
@@ -54,34 +54,44 @@ namespace ProductGrpcService.Services
             return _mapper.Map<ProductResponse>(productEntity);
         }
 
-        public override async Task<ProductResponse> UpdateProductResponse(UpdateProductRequest request, ServerCallContext context)
+        public override async Task<QueueAcceptedResponse> UpdateProductResponse(
+            UpdateProductRequest request,
+            ServerCallContext context)
         {
-           
-            var product = await _db.Products.FindAsync(request.Id);
-            if (product == null)
+
+            if (request.Id <= 0 || string.IsNullOrWhiteSpace(request.Name))
             {
-                throw new RpcException(new Status(StatusCode.NotFound, $"Product with ID {request.Id} was not found."));
+                throw new RpcException(
+                    new Status(
+                        StatusCode.InvalidArgument,
+                        "Invalid product information."));
             }
-            product.Name = request.Name;
-            product.Description = request.Description;
-            product.Price = request.Price;
-            product.CategoryId = request.CategoryId;
-            product.InventoryId = request.InventoryId;
-            await _db.SaveChangesAsync();
-            _logger.LogInformation("Product ID {Id} updated in PostgreSQL database.", product.Id);
 
 
-            string messagePayload = $"ProductUpdated:{product.Id},{product.Name},{DateTime.Now}";
-            _producer.PublishProductEvent(messagePayload);
-
-            return new ProductResponse
+            var command = new UpdateProductCommand
             {
-                Id = product.Id,
-                Name = product.Name,
-                Description = product.Description,
-                Price = product.Price,
-                CategoryId = product.CategoryId,
-                InventoryId = product.InventoryId
+                RequestId = Guid.NewGuid().ToString(),
+                ProductId = request.Id,
+                Name = request.Name,
+                Description = request.Description,
+                Price = request.Price,
+                CategoryId = request.CategoryId,
+                InventoryId = request.InventoryId
+            };
+
+
+            await _producer.PublishProductUpdateAsync(command);
+
+            _logger.LogInformation(
+                "Product update command accepted. RequestId: {RequestId}",
+                      command.RequestId);
+
+            // Return immediately; worker has not necessarily updated PostgreSQL yet
+            return new QueueAcceptedResponse
+            {
+                RequestId = command.RequestId,
+                Accepted = true,
+                Message = "Product update command accepted for processing."
             };
         }
     }
