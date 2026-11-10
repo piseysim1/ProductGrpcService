@@ -178,3 +178,5 @@ D:\work\Nano\Learning\ApiPractice\ProductGrpcService\ProductGrpcService\obj\Debu
 D:\work\Nano\Learning\ApiPractice\ProductGrpcService\ProductGrpcService\obj\Debug\net10.0\ProductGrpcService.pdb
 D:\work\Nano\Learning\ApiPractice\ProductGrpcService\ProductGrpcService\obj\Debug\net10.0\ProductGrpcService.genruntimeconfig.cache
 D:\work\Nano\Learning\ApiPractice\ProductGrpcService\ProductGrpcService\obj\Debug\net10.0\ref\ProductGrpcService.dll
+D:\work\Nano\Learning\ApiPractice\ProductGrpcService\ProductGrpcService\bin\Debug\net10.0\RabbitMQ.Stream.Client.dll
+D:\work\Nano\Learning\ApiPractice\ProductGrpcService\ProductGrpcService\bin\Debug\net10.0\System.IO.Hashing.dll

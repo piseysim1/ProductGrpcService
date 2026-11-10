@@ -5,14 +5,20 @@ services:
     image: rabbitmq:3-management-alpine
     container_name: rabbitmq_broker
     restart: always
+
     ports:
-      - "5672:5672"   # AMQP protocol port used by your ASP.NET Core application
-      - "15672:15672" # Management UI Dashboard (http://localhost:15672)
+      - '5672:5672'
+      - '15672:15672'
+      - '5552:5552'
+
     environment:
       RABBITMQ_DEFAULT_USER: guest
       RABBITMQ_DEFAULT_PASS: guest
+      RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS: '-rabbitmq_stream advertised_host localhost'
+
     volumes:
       - rabbitmq_data:/var/lib/rabbitmq
+      - ./rabbitmq/enabled_plugins:/etc/rabbitmq/enabled_plugins:ro
 
 volumes:
   rabbitmq_data:
