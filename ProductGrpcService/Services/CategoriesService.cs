@@ -1,49 +1,49 @@
 ﻿
+using AutoMapper;
 using Grpc.Core;
-using ProductGrpcService.Data;
+using Microsoft.EntityFrameworkCore;
+using ProductGrpcService.Messaging;
 
 namespace ProductGrpcService.Services
 {
-    public class CategoriesService : CategoryService.CategoryServiceBase
+    public class CategoriesService(ILogger<CategoriesService> logger, SampleDbContext db, IMapper mapper, RabbitMQProducer producer) : CategoryService.CategoryServiceBase
     {
-        private readonly ILogger<CategoriesService> _logger;
+        private readonly ILogger<CategoriesService> _logger = logger;
+        private readonly SampleDbContext _db = db;
+        private readonly IMapper _mapper = mapper;
+        private readonly RabbitMQProducer _producer = producer;
 
-        public CategoriesService(ILogger<CategoriesService> logger)
-        {
-            _logger = logger;
-        }
 
-        public override Task<CategoryListResponse> GetAllCategories(
+        public override async Task<CategoryListResponse> GetAllCategories(
             GetAllCategoriesRequest request,
             ServerCallContext context)
         {
             _logger.LogInformation("Fetching all categories...");
 
-            var response = new CategoryListResponse();
-
-            response.Categories.AddRange(
-                CategoryData.GetMockCategoryList());
-
-            return Task.FromResult(response);
+            var CategoryEntity = await _db.Categories.ToListAsync();
+            var cateogryRes = new CategoryListResponse();
+            var mapCategory = _mapper.Map<IEnumerable<CategoryResponse>>(CategoryEntity);
+            cateogryRes.Categories.AddRange(mapCategory);
+            await _db.SaveChangesAsync();
+            return cateogryRes;
         }
 
-        public override Task<CategoryResponse> GetCategoryById(
+        public override async Task<CategoryResponse> GetCategoryById(
             CategoryByIdRequest request,
             ServerCallContext context)
         {
             _logger.LogInformation(
                 "Fetching category ID: {Id}", request.Id);
 
-            var category = CategoryData.GetMockCategoryList()
-                .FirstOrDefault(c => c.Id == request.Id);
+            var category = await _db.Categories.FindAsync(request.Id);
 
             if (category == null)
             {
                 throw new RpcException(
                     new Status(StatusCode.NotFound, "Category not found."));
             }
-                    
-            return Task.FromResult(category);
+
+            return _mapper.Map<CategoryResponse>(category);
         }
     }
 }

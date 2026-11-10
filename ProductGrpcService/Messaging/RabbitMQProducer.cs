@@ -73,7 +73,7 @@ namespace ProductGrpcService.Messaging
                 body: body);
 
             Console.WriteLine(
-                $"public message the product update: {command.RequestId}");
+                $"public message the product update: {command.ProductId}");
         }
-    }
+    }   
 }

@@ -8,8 +8,7 @@ service ProductService {
   rpc GetAllProducts (GetAllProductsRequest) returns (ProductListResponse);
   rpc GetProductById (ProductByIdRequest) returns (ProductResponse);
   rpc AddProducts (AddProduct) returns(ProductResponse);
- rpc UpdateProductResponse(UpdateProductRequest)
-    returns (QueueAcceptedResponse);
+  rpc UpdateProductResponse(UpdateProductRequest) returns (QueueAcceptedResponse);
 }
 message QueueAcceptedResponse {
     string requestId = 1;
@@ -55,4 +54,4 @@ message UpdateProductRequest {
 	double price = 4;
 	int32 categoryId = 5;		
 	int32 inventoryId= 6;
-}
+}		

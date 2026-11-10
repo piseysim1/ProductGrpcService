@@ -44,6 +44,7 @@ namespace ProductGrpcService
                 new Category { Id = 2, Name = "Keyboards", Description = "Mechanical and membrane keyboards" }
             );
 
+
             // 2. Seed Inventories
             mb.Entity<Inventory>().HasData(
                 new Inventory { Id = 1, ProductId = 1, StockQuantity = 500, WarehouseLocation = "Main Warehouse" }

@@ -23,11 +23,16 @@ var config = new MapperConfiguration(cfg => {
 IMapper mapper = config.CreateMapper();
 builder.Services.AddSingleton(mapper);
 // Register RabbitMQ Producer
-builder.Services.AddSingleton<ProductGrpcService.Messaging.RabbitMQProducer>();
+//builder.Services.AddSingleton<ProductGrpcService.Messaging.RabbitMQProducer>();
 
 // Register RabbitMQ Background Consumer Worker
-builder.Services.AddHostedService<ProductGrpcService.Messaging.RabbitMQConsumerWorker>();
+//builder.Services.AddHostedService<ProductGrpcService.Worker.RabbitMQConsumerWorker>();
 builder.Services.AddGrpc();
+// Register the Multi-Exchange Producer
+builder.Services.AddSingleton<ProductGrpcService.Messaging.MultiExchangeProducer>();
+
+// Register the Multi-Exchange Consumer Worker
+builder.Services.AddHostedService<ProductGrpcService.Worker.MultiExchangeConsumerWorker>();
 
 var app = builder.Build();
 // --- Test RabbitMQ Publisher End-to-End ---
