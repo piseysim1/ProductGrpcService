@@ -22,11 +22,11 @@ namespace ProductGrpcService.Worker
             var connection = await factory.CreateConnectionAsync(stoppingToken);
 
             // Start all 4 consumer loops on the same connection concurrently
-            //await SetupDirectConsumerAsync(connection, stoppingToken);
-            //await SetupFanoutConsumerAsync(connection, stoppingToken, "q.fanout.queue1");
-            //_ = SetupFanoutConsumerAsync(connection, stoppingToken, "q.fanout.queue2"); // 2nd queue proves broadcast!
-           await SetupTopicConsumerAsync(connection, stoppingToken);
-            //_ = SetupHeadersConsumerAsync(connection, stoppingToken);
+            await SetupDirectConsumerAsync(connection, stoppingToken);
+            await SetupFanoutConsumerAsync(connection, stoppingToken, "q.fanout.queue1");
+            await SetupFanoutConsumerAsync(connection, stoppingToken, "q.fanout.queue2"); // 2nd queue proves broadcast!
+            await SetupTopicConsumerAsync(connection, stoppingToken);
+            await SetupHeadersConsumerAsync(connection, stoppingToken);
 
             _logger.LogInformation("[MULTI-WORKER] All 4 exchange consumers are up and listening...");
 

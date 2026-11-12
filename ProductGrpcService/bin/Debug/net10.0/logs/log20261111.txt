@@ -1,0 +1,100 @@
+2026-11-11 14:15:13.937 +07:00 [WRN] Overriding address(es) 'http://localhost:7071, http://localhost:5017'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2026-11-11 14:15:14.024 +07:00 [INF] Now listening on: http://localhost:7071
+2026-11-11 14:15:14.026 +07:00 [INF] Now listening on: http://localhost:5017
+2026-11-11 14:15:14.037 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2026-11-11 14:15:14.136 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-11-11 14:15:14.137 +07:00 [INF] Hosting environment: Development
+2026-11-11 14:15:14.139 +07:00 [INF] Content root path: D:\work\Nano\Learning\ApiPractice\ProductGrpcService\ProductGrpcService
+2026-11-11 14:15:37.846 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5017/ - null null
+2026-11-11 14:15:37.955 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5017/ - 404 null null 132.3274ms
+2026-11-11 14:15:37.970 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5017/, Response status code: 404
+2026-11-11 14:16:56.518 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5017/test/stream - null null
+2026-11-11 14:16:56.539 +07:00 [INF] Executing endpoint 'HTTP: GET /test/stream'
+2026-11-11 14:16:57.353 +07:00 [INF] Setting HTTP status code 200.
+2026-11-11 14:16:57.359 +07:00 [INF] Writing value of type '<>f__AnonymousType6`2' as Json.
+2026-11-11 14:16:57.377 +07:00 [INF] Executed endpoint 'HTTP: GET /test/stream'
+2026-11-11 14:16:57.386 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5017/test/stream - 200 null application/json; charset=utf-8 868.0655ms
+2026-11-11 14:16:57.422 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5017/favicon.ico - null null
+2026-11-11 14:16:57.431 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5017/favicon.ico - 404 0 null 9.1034ms
+2026-11-11 14:16:57.438 +07:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5017/favicon.ico, Response status code: 404
+2026-11-11 14:23:27.291 +07:00 [WRN] Overriding address(es) 'http://localhost:7071, http://localhost:5017'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2026-11-11 14:23:27.365 +07:00 [INF] Now listening on: http://localhost:7071
+2026-11-11 14:23:27.368 +07:00 [INF] Now listening on: http://localhost:5017
+2026-11-11 14:23:27.375 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2026-11-11 14:23:27.421 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-11-11 14:23:27.422 +07:00 [INF] Hosting environment: Development
+2026-11-11 14:23:27.423 +07:00 [INF] Content root path: D:\work\Nano\Learning\ApiPractice\ProductGrpcService\ProductGrpcService
+2026-11-11 14:23:27.544 +07:00 [INF] [MULTI-WORKER] All 4 exchange consumers are up and listening...
+2026-11-11 14:25:21.650 +07:00 [INF] Request starting HTTP/2 POST http://localhost:7071/product.ProductService/UpdateProductResponse - application/grpc null
+2026-11-11 14:25:21.695 +07:00 [INF] Executing endpoint 'gRPC - /product.ProductService/UpdateProductResponse'
+2026-11-11 14:25:21.906 +07:00 [INF] Publishing product update command. RequestId: 0HNPVOJOVO638:00000001, ProductId: 1
+2026-11-11 14:25:21.995 +07:00 [INF] [HEADERS CONSUMER] Received matching header attributes: {"RequestId":"82c12c61-919e-4906-a6fb-3fb2f3e34722","ProductId":1,"Name":"Test DirectExchange","Description":"New laptop description","Price":1200,"CategoryId":1,"InventoryId":1}
+2026-11-11 14:25:22.038 +07:00 [INF] Product update command published successfully. RequestId: 0HNPVOJOVO638:00000001, ProductId: 1
+2026-11-11 14:25:22.052 +07:00 [INF] Executed endpoint 'gRPC - /product.ProductService/UpdateProductResponse'
+2026-11-11 14:25:22.060 +07:00 [INF] Request finished HTTP/2 POST http://localhost:7071/product.ProductService/UpdateProductResponse - 200 null application/grpc 417.8482ms
+2026-11-11 14:26:18.728 +07:00 [WRN] Overriding address(es) 'http://localhost:7071, http://localhost:5017'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2026-11-11 14:26:18.788 +07:00 [INF] Now listening on: http://localhost:7071
+2026-11-11 14:26:18.790 +07:00 [INF] Now listening on: http://localhost:5017
+2026-11-11 14:26:18.797 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2026-11-11 14:26:18.836 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-11-11 14:26:18.837 +07:00 [INF] Hosting environment: Development
+2026-11-11 14:26:18.838 +07:00 [INF] Content root path: D:\work\Nano\Learning\ApiPractice\ProductGrpcService\ProductGrpcService
+2026-11-11 14:26:21.274 +07:00 [INF] Request starting HTTP/2 POST http://localhost:7071/product.ProductService/UpdateProductResponse - application/grpc null
+2026-11-11 14:26:21.311 +07:00 [INF] Executing endpoint 'gRPC - /product.ProductService/UpdateProductResponse'
+2026-11-11 14:26:21.392 +07:00 [INF] Publishing product update command. RequestId: 0HNPVOKAOIRDC:00000001, ProductId: 1
+2026-11-11 14:26:21.609 +07:00 [INF] Product update command published successfully. RequestId: 0HNPVOKAOIRDC:00000001, ProductId: 1
+2026-11-11 14:26:21.621 +07:00 [INF] Executed endpoint 'gRPC - /product.ProductService/UpdateProductResponse'
+2026-11-11 14:26:21.628 +07:00 [INF] Request finished HTTP/2 POST http://localhost:7071/product.ProductService/UpdateProductResponse - 200 null application/grpc 359.343ms
+2026-11-11 14:26:45.445 +07:00 [WRN] Overriding address(es) 'http://localhost:7071, http://localhost:5017'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2026-11-11 14:26:45.505 +07:00 [INF] Now listening on: http://localhost:7071
+2026-11-11 14:26:45.507 +07:00 [INF] Now listening on: http://localhost:5017
+2026-11-11 14:26:45.514 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2026-11-11 14:26:45.550 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-11-11 14:26:45.553 +07:00 [INF] Hosting environment: Development
+2026-11-11 14:26:45.554 +07:00 [INF] Content root path: D:\work\Nano\Learning\ApiPractice\ProductGrpcService\ProductGrpcService
+2026-11-11 14:26:49.291 +07:00 [INF] Request starting HTTP/2 POST http://localhost:7071/product.ProductService/UpdateProductResponse - application/grpc null
+2026-11-11 14:26:49.327 +07:00 [INF] Executing endpoint 'gRPC - /product.ProductService/UpdateProductResponse'
+2026-11-11 14:26:49.400 +07:00 [INF] Publishing product update command. RequestId: 0HNPVOKJ3P960:00000001, ProductId: 1
+2026-11-11 14:26:49.619 +07:00 [INF] Product update command published successfully. RequestId: 0HNPVOKJ3P960:00000001, ProductId: 1
+2026-11-11 14:26:49.630 +07:00 [INF] Executed endpoint 'gRPC - /product.ProductService/UpdateProductResponse'
+2026-11-11 14:26:49.635 +07:00 [INF] Request finished HTTP/2 POST http://localhost:7071/product.ProductService/UpdateProductResponse - 200 null application/grpc 350.3978ms
+2026-11-11 14:28:22.003 +07:00 [WRN] Overriding address(es) 'http://localhost:7071, http://localhost:5017'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2026-11-11 14:28:22.085 +07:00 [INF] Now listening on: http://localhost:7071
+2026-11-11 14:28:22.087 +07:00 [INF] Now listening on: http://localhost:5017
+2026-11-11 14:28:22.095 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2026-11-11 14:28:22.141 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-11-11 14:28:22.143 +07:00 [INF] Hosting environment: Development
+2026-11-11 14:28:22.144 +07:00 [INF] Content root path: D:\work\Nano\Learning\ApiPractice\ProductGrpcService\ProductGrpcService
+2026-11-11 14:28:22.169 +07:00 [INF] [MULTI-WORKER] All 4 exchange consumers are up and listening...
+2026-11-11 14:28:22.174 +07:00 [INF] [HEADERS CONSUMER] Received matching header attributes: {"RequestId":"33083e52-da00-44d7-ab42-4a0eeb00058d","ProductId":1,"Name":"Test DirectExchange","Description":"New laptop description","Price":1200,"CategoryId":1,"InventoryId":1}
+2026-11-11 14:28:22.176 +07:00 [INF] [HEADERS CONSUMER] Received matching header attributes: {"RequestId":"44f575b2-0d38-40c3-a813-5eaa0b9569f4","ProductId":1,"Name":"Test DirectExchange","Description":"New laptop description","Price":1200,"CategoryId":1,"InventoryId":1}
+2026-11-11 15:36:01.636 +07:00 [WRN] Overriding address(es) 'http://localhost:7071, http://localhost:5017'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2026-11-11 15:36:01.733 +07:00 [INF] Now listening on: http://localhost:7071
+2026-11-11 15:36:01.735 +07:00 [INF] Now listening on: http://localhost:5017
+2026-11-11 15:36:01.741 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2026-11-11 15:36:01.777 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-11-11 15:36:01.778 +07:00 [INF] Hosting environment: Development
+2026-11-11 15:36:01.778 +07:00 [INF] Content root path: D:\work\Nano\Learning\ApiPractice\ProductGrpcService\ProductGrpcService
+2026-11-11 15:36:08.098 +07:00 [INF] Request starting HTTP/2 POST http://localhost:7071/inventory.InventoryService/GetAllInventories - application/grpc null
+2026-11-11 15:36:08.193 +07:00 [INF] Executing endpoint 'gRPC - /inventory.InventoryService/GetAllInventories'
+2026-11-11 15:36:08.367 +07:00 [INF] Fetching all inventories.
+2026-11-11 15:36:10.770 +07:00 [INF] Retrieved 1 inventories from database.
+2026-11-11 15:36:10.800 +07:00 [INF] Executed endpoint 'gRPC - /inventory.InventoryService/GetAllInventories'
+2026-11-11 15:36:10.814 +07:00 [INF] Request finished HTTP/2 POST http://localhost:7071/inventory.InventoryService/GetAllInventories - 200 null application/grpc 2733.3118ms
+2026-11-11 15:37:06.013 +07:00 [INF] Request starting HTTP/2 POST http://localhost:7071/inventory.InventoryService/GetInventoryById - application/grpc null
+2026-11-11 15:37:06.022 +07:00 [INF] Executing endpoint 'gRPC - /inventory.InventoryService/GetInventoryById'
+2026-11-11 15:37:06.037 +07:00 [INF] Fetching inventory with ID: 2.
+2026-11-11 15:37:06.317 +07:00 [WRN] Inventory with ID 2 was not found.
+2026-11-11 15:42:19.565 +07:00 [WRN] Overriding address(es) 'http://localhost:7071, http://localhost:5017'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2026-11-11 15:42:19.636 +07:00 [INF] Now listening on: http://localhost:7071
+2026-11-11 15:42:19.639 +07:00 [INF] Now listening on: http://localhost:5017
+2026-11-11 15:42:19.650 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2026-11-11 15:42:19.698 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-11-11 15:42:19.699 +07:00 [INF] Hosting environment: Development
+2026-11-11 15:42:19.701 +07:00 [INF] Content root path: D:\work\Nano\Learning\ApiPractice\ProductGrpcService\ProductGrpcService
+2026-11-11 15:42:26.686 +07:00 [INF] Request starting HTTP/2 POST http://localhost:7071/inventory.InventoryService/GetAllInventories - application/grpc null
+2026-11-11 15:42:26.769 +07:00 [INF] Executing endpoint 'gRPC - /inventory.InventoryService/GetAllInventories'
+2026-11-11 15:42:26.935 +07:00 [INF] Fetching all inventories. Operation: GetAllInventories
+2026-11-11 15:42:28.726 +07:00 [INF] Retrieved 1 inventories successfully.
+2026-11-11 15:42:28.775 +07:00 [INF] Executed endpoint 'gRPC - /inventory.InventoryService/GetAllInventories'
+2026-11-11 15:42:28.794 +07:00 [INF] Request finished HTTP/2 POST http://localhost:7071/inventory.InventoryService/GetAllInventories - 200 null application/grpc 2121.0986ms

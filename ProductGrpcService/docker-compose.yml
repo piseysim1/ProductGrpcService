@@ -1,24 +1,16 @@
-﻿version: '3.8'
-
 services:
-  rabbitmq:
-    image: rabbitmq:3-management-alpine
-    container_name: rabbitmq_broker
-    restart: always
+  otel-collector:
+    image: otel/opentelemetry-collector-contrib:latest
+    container_name: otel-collector
 
-    ports:
-      - '5672:5672'
-      - '15672:15672'
-      - '5552:5552'
-
-    environment:
-      RABBITMQ_DEFAULT_USER: guest
-      RABBITMQ_DEFAULT_PASS: guest
-      RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS: '-rabbitmq_stream advertised_host localhost'
+    command:
+      - "--config=/etc/otelcol-contrib/config.yaml"
 
     volumes:
-      - rabbitmq_data:/var/lib/rabbitmq
-      - ./rabbitmq/enabled_plugins:/etc/rabbitmq/enabled_plugins:ro
+      - ./otel-collector/config.yaml:/etc/otelcol-contrib/config.yaml:ro
 
-volumes:
-  rabbitmq_data:
+    ports:
+      - "4317:4317"
+      - "4318:4318"
+
+    restart: unless-stopped

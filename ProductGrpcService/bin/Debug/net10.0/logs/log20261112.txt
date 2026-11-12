@@ -1,0 +1,86 @@
+2026-11-12 16:23:39.970 +07:00 [WRN] Overriding address(es) 'http://localhost:7071, http://localhost:5017'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2026-11-12 16:23:40.060 +07:00 [INF] Now listening on: http://localhost:7071
+2026-11-12 16:23:40.064 +07:00 [INF] Now listening on: http://localhost:5017
+2026-11-12 16:23:40.075 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2026-11-12 16:23:40.137 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-11-12 16:23:40.138 +07:00 [INF] Hosting environment: Development
+2026-11-12 16:23:40.140 +07:00 [INF] Content root path: D:\work\Nano\Learning\ApiPractice\ProductGrpcService\ProductGrpcService
+2026-11-12 16:25:58.277 +07:00 [WRN] Overriding address(es) 'http://localhost:7071, http://localhost:5017'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2026-11-12 16:25:58.369 +07:00 [INF] Now listening on: http://localhost:7071
+2026-11-12 16:25:58.373 +07:00 [INF] Now listening on: http://localhost:5017
+2026-11-12 16:25:58.384 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2026-11-12 16:25:58.421 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-11-12 16:25:58.422 +07:00 [INF] Hosting environment: Development
+2026-11-12 16:25:58.423 +07:00 [INF] Content root path: D:\work\Nano\Learning\ApiPractice\ProductGrpcService\ProductGrpcService
+2026-11-12 16:26:24.368 +07:00 [INF] Request starting HTTP/2 POST http://localhost:7071/product.ProductService/GetAllProducts - application/grpc null
+2026-11-12 16:26:24.453 +07:00 [INF] Executing endpoint 'gRPC - /product.ProductService/GetAllProducts'
+2026-11-12 16:26:24.659 +07:00 [ERR] Error when executing service method 'GetAllProducts'.
+System.InvalidOperationException: Unable to resolve service for type 'ProductGrpcService.Messaging.MultiExchangeProducer' while attempting to activate 'ProductGrpcService.Services.ProductsService'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method1(Closure, IServiceProvider, Object[])
+   at Grpc.AspNetCore.Server.Internal.DefaultGrpcServiceActivator`1.Create(IServiceProvider serviceProvider)
+   at Grpc.Shared.Server.UnaryServerMethodInvoker`3.Invoke(HttpContext httpContext, ServerCallContext serverCallContext, TRequest request)
+--- End of stack trace from previous location ---
+   at Grpc.AspNetCore.Server.Internal.CallHandlers.UnaryServerCallHandler`3.HandleCallAsyncCore(HttpContext httpContext, HttpContextServerCallContext serverCallContext)
+   at Grpc.AspNetCore.Server.Internal.CallHandlers.ServerCallHandlerBase`3.<HandleCallAsync>g__AwaitHandleCall|8_0(HttpContextServerCallContext serverCallContext, Method`2 method, Task handleCall)
+2026-11-12 16:26:24.683 +07:00 [INF] Executed endpoint 'gRPC - /product.ProductService/GetAllProducts'
+2026-11-12 16:26:24.691 +07:00 [INF] Request finished HTTP/2 POST http://localhost:7071/product.ProductService/GetAllProducts - 200 0 application/grpc 351.5051ms
+2026-11-12 16:28:03.532 +07:00 [INF] Request starting HTTP/2 POST http://localhost:7071/product.ProductService/GetAllProducts - application/grpc null
+2026-11-12 16:28:03.543 +07:00 [INF] Executing endpoint 'gRPC - /product.ProductService/GetAllProducts'
+2026-11-12 16:28:03.560 +07:00 [ERR] Error when executing service method 'GetAllProducts'.
+System.InvalidOperationException: Unable to resolve service for type 'ProductGrpcService.Messaging.MultiExchangeProducer' while attempting to activate 'ProductGrpcService.Services.ProductsService'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method1(Closure, IServiceProvider, Object[])
+   at Grpc.AspNetCore.Server.Internal.DefaultGrpcServiceActivator`1.Create(IServiceProvider serviceProvider)
+   at Grpc.Shared.Server.UnaryServerMethodInvoker`3.Invoke(HttpContext httpContext, ServerCallContext serverCallContext, TRequest request)
+--- End of stack trace from previous location ---
+   at Grpc.AspNetCore.Server.Internal.CallHandlers.UnaryServerCallHandler`3.HandleCallAsyncCore(HttpContext httpContext, HttpContextServerCallContext serverCallContext)
+   at Grpc.AspNetCore.Server.Internal.CallHandlers.ServerCallHandlerBase`3.<HandleCallAsync>g__AwaitHandleCall|8_0(HttpContextServerCallContext serverCallContext, Method`2 method, Task handleCall)
+2026-11-12 16:28:03.564 +07:00 [INF] Executed endpoint 'gRPC - /product.ProductService/GetAllProducts'
+2026-11-12 16:28:03.566 +07:00 [INF] Request finished HTTP/2 POST http://localhost:7071/product.ProductService/GetAllProducts - 200 0 application/grpc 34.3096ms
+2026-11-12 16:28:14.257 +07:00 [INF] Request starting HTTP/2 POST http://localhost:7071/product.ProductService/GetAllProducts - application/grpc null
+2026-11-12 16:28:14.260 +07:00 [INF] Executing endpoint 'gRPC - /product.ProductService/GetAllProducts'
+2026-11-12 16:28:14.266 +07:00 [ERR] Error when executing service method 'GetAllProducts'.
+System.InvalidOperationException: Unable to resolve service for type 'ProductGrpcService.Messaging.MultiExchangeProducer' while attempting to activate 'ProductGrpcService.Services.ProductsService'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method1(Closure, IServiceProvider, Object[])
+   at Grpc.AspNetCore.Server.Internal.DefaultGrpcServiceActivator`1.Create(IServiceProvider serviceProvider)
+   at Grpc.Shared.Server.UnaryServerMethodInvoker`3.Invoke(HttpContext httpContext, ServerCallContext serverCallContext, TRequest request)
+--- End of stack trace from previous location ---
+   at Grpc.AspNetCore.Server.Internal.CallHandlers.UnaryServerCallHandler`3.HandleCallAsyncCore(HttpContext httpContext, HttpContextServerCallContext serverCallContext)
+   at Grpc.AspNetCore.Server.Internal.CallHandlers.ServerCallHandlerBase`3.<HandleCallAsync>g__AwaitHandleCall|8_0(HttpContextServerCallContext serverCallContext, Method`2 method, Task handleCall)
+2026-11-12 16:28:14.270 +07:00 [INF] Executed endpoint 'gRPC - /product.ProductService/GetAllProducts'
+2026-11-12 16:28:14.271 +07:00 [INF] Request finished HTTP/2 POST http://localhost:7071/product.ProductService/GetAllProducts - 200 0 application/grpc 14.6101ms
+2026-11-12 16:28:49.690 +07:00 [WRN] Overriding address(es) 'http://localhost:7071, http://localhost:5017'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2026-11-12 16:28:49.752 +07:00 [INF] Now listening on: http://localhost:7071
+2026-11-12 16:28:49.755 +07:00 [INF] Now listening on: http://localhost:5017
+2026-11-12 16:28:49.762 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2026-11-12 16:28:49.798 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-11-12 16:28:49.799 +07:00 [INF] Hosting environment: Development
+2026-11-12 16:28:49.800 +07:00 [INF] Content root path: D:\work\Nano\Learning\ApiPractice\ProductGrpcService\ProductGrpcService
+2026-11-12 16:28:53.351 +07:00 [INF] Request starting HTTP/2 POST http://localhost:7071/product.ProductService/GetAllProducts - application/grpc null
+2026-11-12 16:28:53.394 +07:00 [INF] Executing endpoint 'gRPC - /product.ProductService/GetAllProducts'
+2026-11-12 16:28:53.471 +07:00 [ERR] Error when executing service method 'GetAllProducts'.
+System.InvalidOperationException: Unable to resolve service for type 'ProductGrpcService.Messaging.MultiExchangeProducer' while attempting to activate 'ProductGrpcService.Services.ProductsService'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method1(Closure, IServiceProvider, Object[])
+   at Grpc.AspNetCore.Server.Internal.DefaultGrpcServiceActivator`1.Create(IServiceProvider serviceProvider)
+   at Grpc.Shared.Server.UnaryServerMethodInvoker`3.Invoke(HttpContext httpContext, ServerCallContext serverCallContext, TRequest request)
+--- End of stack trace from previous location ---
+   at Grpc.AspNetCore.Server.Internal.CallHandlers.UnaryServerCallHandler`3.HandleCallAsyncCore(HttpContext httpContext, HttpContextServerCallContext serverCallContext)
+   at Grpc.AspNetCore.Server.Internal.CallHandlers.ServerCallHandlerBase`3.<HandleCallAsync>g__AwaitHandleCall|8_0(HttpContextServerCallContext serverCallContext, Method`2 method, Task handleCall)
+2026-11-12 16:28:53.490 +07:00 [INF] Executed endpoint 'gRPC - /product.ProductService/GetAllProducts'
+2026-11-12 16:28:53.496 +07:00 [INF] Request finished HTTP/2 POST http://localhost:7071/product.ProductService/GetAllProducts - 200 0 application/grpc 165.7404ms
+2026-11-12 16:29:18.808 +07:00 [INF] Request starting HTTP/2 POST http://localhost:7071/product.ProductService/GetAllProducts - application/grpc null
+2026-11-12 16:29:18.815 +07:00 [INF] Executing endpoint 'gRPC - /product.ProductService/GetAllProducts'
+2026-11-12 16:29:18.822 +07:00 [ERR] Error when executing service method 'GetAllProducts'.
+System.InvalidOperationException: Unable to resolve service for type 'ProductGrpcService.Messaging.MultiExchangeProducer' while attempting to activate 'ProductGrpcService.Services.ProductsService'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method1(Closure, IServiceProvider, Object[])
+   at Grpc.AspNetCore.Server.Internal.DefaultGrpcServiceActivator`1.Create(IServiceProvider serviceProvider)
+   at Grpc.Shared.Server.UnaryServerMethodInvoker`3.Invoke(HttpContext httpContext, ServerCallContext serverCallContext, TRequest request)
+--- End of stack trace from previous location ---
+   at Grpc.AspNetCore.Server.Internal.CallHandlers.UnaryServerCallHandler`3.HandleCallAsyncCore(HttpContext httpContext, HttpContextServerCallContext serverCallContext)
+   at Grpc.AspNetCore.Server.Internal.CallHandlers.ServerCallHandlerBase`3.<HandleCallAsync>g__AwaitHandleCall|8_0(HttpContextServerCallContext serverCallContext, Method`2 method, Task handleCall)
+2026-11-12 16:29:18.827 +07:00 [INF] Executed endpoint 'gRPC - /product.ProductService/GetAllProducts'
+2026-11-12 16:29:18.829 +07:00 [INF] Request finished HTTP/2 POST http://localhost:7071/product.ProductService/GetAllProducts - 200 0 application/grpc 21.5603ms

@@ -8,6 +8,12 @@ using ProductGrpcService.Worker;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<SampleDbContext>();
 
+// config seriod log 
+builder.Configuration.AddJsonFile("appsettings.json")
+                     .AddEnvironmentVariables();
+SerilogConfig.ConfigureSerilog(builder);
+// add config cros 
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
@@ -35,24 +41,28 @@ builder.Services.AddSingleton(mapper);
 
 // Register the Multi-Exchange Consumer Worker
 //builder.Services.AddHostedService<ProductGrpcService.Worker.MultiExchangeConsumerWorker>();
-builder.Services.AddSingleton<StreamProducer>();
+//builder.Services.AddSingleton<StreamProducer>();
 
 //builder.Services.AddHostedService<RabbitMQStreamWorker>();
+
+// add config opentelemetry  
+OpenTelemetryConfig.ConfigureOpenTelemetry(builder);
+
 builder.Services.AddGrpc();
 var app = builder.Build();
 // --- Test RabbitMQ Publisher End-to-End ---
 
-app.MapGet("/test/stream", async (
-    StreamProducer producer) =>
-{
-    await producer.PublishTestMessagesAsync(5);
+//app.MapGet("/test/stream", async (
+//    StreamProducer producer) =>
+//{
+//    await producer.PublishTestMessagesAsync(5);   
 
-    return Results.Ok(new
-    {
-        Message = "Successfully published 5 messages!",
-        Stream = "product-events"
-    });
-});
+//    return Results.Ok(new
+//    {
+//        Message = "Successfully published 5 messages!",
+//        Stream = "product-events"
+//    });
+//});
 using var scope = app.Services.CreateScope();
 app.MapAllGrpcServices();
 

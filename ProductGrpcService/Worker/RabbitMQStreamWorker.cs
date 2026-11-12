@@ -10,8 +10,8 @@ public class RabbitMQStreamWorker : BackgroundService
 {
     private const string StreamName = "product-events";
 
-    private StreamSystem? _system;
-    private Consumer? _consumer;
+    private StreamSystem _system;
+    private Consumer _consumer;
 
     protected override async Task ExecuteAsync(
         CancellationToken stoppingToken)
