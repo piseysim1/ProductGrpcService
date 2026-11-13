@@ -10,8 +10,7 @@ namespace ProductGrpcService.Config;
 
 public static class OpenTelemetryConfig
 {
-    public static void ConfigureOpenTelemetry(
-        WebApplicationBuilder builder)
+    public static void ConfigureOpenTelemetry( WebApplicationBuilder builder)
     {
         const string serviceName = "ProductGrpcService";
 

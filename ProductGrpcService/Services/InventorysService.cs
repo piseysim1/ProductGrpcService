@@ -6,20 +6,13 @@ using ProductGrpcService.Messaging;
 
 namespace ProductGrpcService.Services
 {
-    public class InventorysService(
-        ILogger<InventorysService> logger,
-        IMapper mapper,
-        SampleDbContext db
-    ) : InventoryService.InventoryServiceBase
+    public class InventorysService(ILogger<InventorysService> logger, IMapper mapper,SampleDbContext db ) : InventoryService.InventoryServiceBase
     {
         private readonly ILogger<InventorysService> _logger = logger;
         private readonly IMapper _mapper = mapper;
         private readonly SampleDbContext _db = db;
 
-
-        public override async Task<InventoryListResponse> GetAllInventories(
-            GetAllInventoryRequest request,
-            ServerCallContext context)
+        public override async Task<InventoryListResponse> GetAllInventories( GetAllInventoryRequest request,ServerCallContext context)
         {
             try
             {
@@ -56,10 +49,9 @@ namespace ProductGrpcService.Services
             }
         }
 
-
-        public override async Task<InventoryResponse> GetInventoryById(
-            InventoryByIdRequest request,
-            ServerCallContext context)
+       
+        
+        public override async Task<InventoryResponse> GetInventoryById(InventoryByIdRequest request, ServerCallContext context)
         {
             _logger.LogInformation(
                 "Fetching inventory with ID: {InventoryId}.",

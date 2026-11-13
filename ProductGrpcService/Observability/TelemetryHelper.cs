@@ -14,28 +14,23 @@ public static class TelemetryHelper
 
         var stopwatch = Stopwatch.StartNew();
 
-        Telemetry.GrpcRequests.Add(
-            1,
-            new KeyValuePair<string, object>(
+        Telemetry.GrpcRequests.Add(1, new KeyValuePair<string, object>(
                 "grpc.method", operationName
             )
         );
 
         try
         {
-            logger.LogInformation(
-                "Starting operation: {OperationName}",
+            logger.LogInformation("Starting operation: {OperationName}",
                 operationName
-            );
-
+        );
             var result = await action();
-
             activity?.SetStatus(ActivityStatusCode.Ok);
 
             logger.LogInformation(
-                "Operation completed: {OperationName}",
-                operationName
-            );
+                      "Operation completed: {OperationName}",
+                      operationName
+                  );
 
             return result;
         }
@@ -57,7 +52,6 @@ public static class TelemetryHelper
         finally
         {
             stopwatch.Stop();
-
             Telemetry.GrpcDuration.Record(
                 stopwatch.Elapsed.TotalMilliseconds,
                 new KeyValuePair<string, object>(

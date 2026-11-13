@@ -13,12 +13,13 @@ namespace ProductGrpcService.Services
     public class ProductsService(
         ILogger<ProductsService> logger,
         SampleDbContext db,
-        IMapper mapper,
-        MultiExchangeProducer multiProducer) : ProductService.ProductServiceBase
+        IMapper mapper) : ProductService.ProductServiceBase
     {
+       
+        //MultiExchangeProducer multiProducer
         private readonly ILogger<ProductsService> _logger = logger;
         private readonly SampleDbContext _db = db;
-        private readonly MultiExchangeProducer _multiProducer = multiProducer;
+        //private readonly MultiExchangeProducer _multiProducer = multiProducer;
         private readonly IMapper _mapper = mapper;
 
         //public override async Task<ProductListResponse> GetAllProducts(GetAllProductsRequest request, ServerCallContext context)
@@ -39,9 +40,7 @@ namespace ProductGrpcService.Services
         //    return response;
         //}
 
-        public override async Task<ProductListResponse> GetAllProducts(
-            GetAllProductsRequest request,
-            ServerCallContext context)
+        public override async Task<ProductListResponse> GetAllProducts( GetAllProductsRequest request,ServerCallContext context)
         {
             // 1. TRACE: Create a custom span
             using var activity = Telemetry.ActivitySource
@@ -202,75 +201,75 @@ namespace ProductGrpcService.Services
         //        Message = "Product update command accepted for processing."
         //    };
         //}
-        public override async Task<QueueAcceptedResponse> UpdateProductResponse(UpdateProductRequest request,ServerCallContext context)
-        {
-            if (request.Id <= 0 || string.IsNullOrWhiteSpace(request.Name))
-            {
-                _logger.LogWarning(
-                    "Invalid product update request. ProductId: {ProductId}",
-                    request.Id
-                );
+        //public override async Task<QueueAcceptedResponse> UpdateProductResponse(UpdateProductRequest request,ServerCallContext context)
+        //{
+        //    if (request.Id <= 0 || string.IsNullOrWhiteSpace(request.Name))
+        //    {
+        //        _logger.LogWarning(
+        //            "Invalid product update request. ProductId: {ProductId}",
+        //            request.Id
+        //        );
 
-                throw new RpcException(
-                    new Status(
-                        StatusCode.InvalidArgument,
-                        "Invalid product information."
-                    )
-                );
-            }
+        //        throw new RpcException(
+        //            new Status(
+        //                StatusCode.InvalidArgument,
+        //                "Invalid product information."
+        //            )
+        //        );
+        //    }
 
-            var command = new UpdateProductCommand
-            {
-                RequestId = Guid.NewGuid().ToString(),
-                ProductId = request.Id,
-                Name = request.Name,
-                Description = request.Description,
-                Price = request.Price,
-                CategoryId = request.CategoryId,
-                InventoryId = request.InventoryId
-            };
+        //    var command = new UpdateProductCommand
+        //    {
+        //        RequestId = Guid.NewGuid().ToString(),
+        //        ProductId = request.Id,
+        //        Name = request.Name,
+        //        Description = request.Description,
+        //        Price = request.Price,
+        //        CategoryId = request.CategoryId,
+        //        InventoryId = request.InventoryId
+        //    };
 
-            var headers = new Dictionary<string, object>
-        {
-            { "format", "json" },
-            { "region", "asia" }
-        };
+        //    var headers = new Dictionary<string, object>
+        //{
+        //    { "format", "json" },
+        //    { "region", "asia" }
+        //};
 
-            _logger.LogInformation(
-                "Publishing product update command. RequestId: {RequestId}, ProductId: {ProductId}",
-                command.RequestId,
-                command.ProductId
-            );
+        //    _logger.LogInformation(
+        //        "Publishing product update command. RequestId: {RequestId}, ProductId: {ProductId}",
+        //        command.RequestId,
+        //        command.ProductId
+        //    );
 
-            try
-            {
-                await _multiProducer.PublishHeadersAsync(command, headers);
+        //    try
+        //    {
+        //        await _multiProducer.PublishHeadersAsync(command, headers);
 
-                _logger.LogInformation(
-                    "Product update command published successfully. RequestId: {RequestId}, ProductId: {ProductId}",
-                    command.RequestId,
-                    command.ProductId
-                );
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(
-                    ex,
-                    "Failed to publish product update command. RequestId: {RequestId}, ProductId: {ProductId}",
-                    command.RequestId,
-                    command.ProductId
-                );
+        //        _logger.LogInformation(
+        //            "Product update command published successfully. RequestId: {RequestId}, ProductId: {ProductId}",
+        //            command.RequestId,
+        //            command.ProductId
+        //        );
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logger.LogError(
+        //            ex,
+        //            "Failed to publish product update command. RequestId: {RequestId}, ProductId: {ProductId}",
+        //            command.RequestId,
+        //            command.ProductId
+        //        );
 
-                throw;
-            }
+        //        throw;
+        //    }
 
-            return new QueueAcceptedResponse
-            {
-                RequestId = command.RequestId,
-                Accepted = true,
-                Message = "Product update command accepted for processing."
-            };
-        }
+        //    return new QueueAcceptedResponse
+        //    {
+        //        RequestId = command.RequestId,
+        //        Accepted = true,
+        //        Message = "Product update command accepted for processing."
+        //    };
+        //}
     
 
     }

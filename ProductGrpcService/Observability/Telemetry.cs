@@ -8,8 +8,7 @@ public static class Telemetry
 {
     public const string ActivitySourceName = "ProductGrpcService";
 
-    public static readonly ActivitySource ActivitySource =
-        new(ActivitySourceName);
+    public static readonly ActivitySource ActivitySource = new(ActivitySourceName);
 
     public const string MeterName = "ProductGrpcService";
 

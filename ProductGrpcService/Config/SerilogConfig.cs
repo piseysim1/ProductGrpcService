@@ -1,4 +1,5 @@
 ﻿using Serilog;
+using Serilog.Sinks.OpenTelemetry;
 namespace ProductGrpcService.Config
 {
     public static class SerilogConfig
@@ -14,6 +15,7 @@ namespace ProductGrpcService.Config
             Directory.CreateDirectory(
                 Path.GetDirectoryName(logPath)!
             );
+            var otlpEndPoint = builder.Configuration["OpenTelemetry:Endpoint"] ?? "http://localhost:4317";
 
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Information()
@@ -25,6 +27,11 @@ namespace ProductGrpcService.Config
                     rollOnFileSizeLimit: true,
                     fileSizeLimitBytes: 20 * 1024 * 1024
                 )
+                .WriteTo.OpenTelemetry(options =>
+                {
+                    options.Endpoint = otlpEndPoint;
+                    options.Protocol = OtlpProtocol.Grpc;
+                })
                 .CreateLogger();
 
             builder.Logging.ClearProviders();

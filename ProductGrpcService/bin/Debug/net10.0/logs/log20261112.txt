@@ -84,3 +84,92 @@ System.InvalidOperationException: Unable to resolve service for type 'ProductGrp
    at Grpc.AspNetCore.Server.Internal.CallHandlers.ServerCallHandlerBase`3.<HandleCallAsync>g__AwaitHandleCall|8_0(HttpContextServerCallContext serverCallContext, Method`2 method, Task handleCall)
 2026-11-12 16:29:18.827 +07:00 [INF] Executed endpoint 'gRPC - /product.ProductService/GetAllProducts'
 2026-11-12 16:29:18.829 +07:00 [INF] Request finished HTTP/2 POST http://localhost:7071/product.ProductService/GetAllProducts - 200 0 application/grpc 21.5603ms
+2026-11-12 16:43:11.111 +07:00 [WRN] Overriding address(es) 'http://localhost:7071, http://localhost:5017'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2026-11-12 16:43:11.174 +07:00 [INF] Now listening on: http://localhost:7071
+2026-11-12 16:43:11.177 +07:00 [INF] Now listening on: http://localhost:5017
+2026-11-12 16:43:11.183 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2026-11-12 16:43:11.232 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-11-12 16:43:11.234 +07:00 [INF] Hosting environment: Development
+2026-11-12 16:43:11.235 +07:00 [INF] Content root path: D:\work\Nano\Learning\ApiPractice\ProductGrpcService\ProductGrpcService
+2026-11-12 16:45:29.656 +07:00 [WRN] Overriding address(es) 'http://localhost:7071, http://localhost:5017'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2026-11-12 16:45:29.737 +07:00 [INF] Now listening on: http://localhost:7071
+2026-11-12 16:45:29.741 +07:00 [INF] Now listening on: http://localhost:5017
+2026-11-12 16:45:29.749 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2026-11-12 16:45:29.784 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-11-12 16:45:29.786 +07:00 [INF] Hosting environment: Development
+2026-11-12 16:45:29.788 +07:00 [INF] Content root path: D:\work\Nano\Learning\ApiPractice\ProductGrpcService\ProductGrpcService
+2026-11-12 16:45:55.838 +07:00 [WRN] Overriding address(es) 'http://localhost:7071, http://localhost:5017'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2026-11-12 16:45:55.919 +07:00 [INF] Now listening on: http://localhost:7071
+2026-11-12 16:45:55.921 +07:00 [INF] Now listening on: http://localhost:5017
+2026-11-12 16:45:55.930 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2026-11-12 16:45:55.965 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-11-12 16:45:55.967 +07:00 [INF] Hosting environment: Development
+2026-11-12 16:45:55.968 +07:00 [INF] Content root path: D:\work\Nano\Learning\ApiPractice\ProductGrpcService\ProductGrpcService
+2026-11-12 16:46:23.024 +07:00 [WRN] Overriding address(es) 'http://localhost:7071, http://localhost:5017'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2026-11-12 16:46:23.111 +07:00 [INF] Now listening on: http://localhost:7071
+2026-11-12 16:46:23.114 +07:00 [INF] Now listening on: http://localhost:5017
+2026-11-12 16:46:23.122 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2026-11-12 16:46:23.161 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-11-12 16:46:23.162 +07:00 [INF] Hosting environment: Development
+2026-11-12 16:46:23.163 +07:00 [INF] Content root path: D:\work\Nano\Learning\ApiPractice\ProductGrpcService\ProductGrpcService
+2026-11-12 16:46:33.284 +07:00 [INF] Request starting HTTP/2 POST http://localhost:7071/product.ProductService/GetAllProducts - application/grpc null
+2026-11-12 16:46:33.330 +07:00 [INF] Executing endpoint 'gRPC - /product.ProductService/GetAllProducts'
+2026-11-12 16:46:33.447 +07:00 [INF] Retrieving all products
+2026-11-12 16:46:35.131 +07:00 [ERR] Failed to retrieve all products
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+List`1 -> IEnumerable`1
+System.Collections.Generic.List`1[[ProductGrpcService.Domain.SampleDb+Product, ProductGrpcService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.IEnumerable`1[[ProductGrpcService.ProductResponse, ProductGrpcService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Product -> ProductResponse
+ProductGrpcService.Domain.SampleDb+Product -> ProductGrpcService.ProductResponse
+   at lambda_method68(Closure, Product, ProductResponse, ResolutionContext)
+   at lambda_method67(Closure, Object, IEnumerable`1, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method67(Closure, Object, IEnumerable`1, ResolutionContext)
+   at ProductGrpcService.Services.ProductsService.GetAllProducts(GetAllProductsRequest request, ServerCallContext context) in D:\work\Nano\Learning\ApiPractice\ProductGrpcService\ProductGrpcService\Services\ProductsService.cs:line 71
+2026-11-12 16:46:35.217 +07:00 [ERR] Error when executing service method 'GetAllProducts'.
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+List`1 -> IEnumerable`1
+System.Collections.Generic.List`1[[ProductGrpcService.Domain.SampleDb+Product, ProductGrpcService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.IEnumerable`1[[ProductGrpcService.ProductResponse, ProductGrpcService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Product -> ProductResponse
+ProductGrpcService.Domain.SampleDb+Product -> ProductGrpcService.ProductResponse
+   at lambda_method68(Closure, Product, ProductResponse, ResolutionContext)
+   at lambda_method67(Closure, Object, IEnumerable`1, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method67(Closure, Object, IEnumerable`1, ResolutionContext)
+   at ProductGrpcService.Services.ProductsService.GetAllProducts(GetAllProductsRequest request, ServerCallContext context) in D:\work\Nano\Learning\ApiPractice\ProductGrpcService\ProductGrpcService\Services\ProductsService.cs:line 71
+   at Grpc.Shared.Server.UnaryServerMethodInvoker`3.AwaitInvoker(Task`1 invokerTask, GrpcActivatorHandle`1 serviceHandle)
+   at Grpc.Shared.Server.UnaryServerMethodInvoker`3.AwaitInvoker(Task`1 invokerTask, GrpcActivatorHandle`1 serviceHandle)
+   at Grpc.AspNetCore.Server.Internal.CallHandlers.UnaryServerCallHandler`3.HandleCallAsyncCore(HttpContext httpContext, HttpContextServerCallContext serverCallContext)
+   at Grpc.AspNetCore.Server.Internal.CallHandlers.ServerCallHandlerBase`3.<HandleCallAsync>g__AwaitHandleCall|8_0(HttpContextServerCallContext serverCallContext, Method`2 method, Task handleCall)
+2026-11-12 16:46:35.228 +07:00 [INF] Executed endpoint 'gRPC - /product.ProductService/GetAllProducts'
+2026-11-12 16:46:35.242 +07:00 [INF] Request finished HTTP/2 POST http://localhost:7071/product.ProductService/GetAllProducts - 200 0 application/grpc 1981.8404ms
+2026-11-12 16:48:35.517 +07:00 [WRN] Overriding address(es) 'http://localhost:7071, http://localhost:5017'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2026-11-12 16:48:35.572 +07:00 [INF] Now listening on: http://localhost:7071
+2026-11-12 16:48:35.575 +07:00 [INF] Now listening on: http://localhost:5017
+2026-11-12 16:48:35.581 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2026-11-12 16:48:35.614 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-11-12 16:48:35.615 +07:00 [INF] Hosting environment: Development
+2026-11-12 16:48:35.615 +07:00 [INF] Content root path: D:\work\Nano\Learning\ApiPractice\ProductGrpcService\ProductGrpcService
+2026-11-12 16:48:42.236 +07:00 [INF] Request starting HTTP/2 POST http://localhost:7071/product.ProductService/GetAllProducts - application/grpc null
+2026-11-12 16:48:42.294 +07:00 [INF] Executing endpoint 'gRPC - /product.ProductService/GetAllProducts'
+2026-11-12 16:48:42.427 +07:00 [INF] Retrieving all products
+2026-11-12 16:48:43.607 +07:00 [INF] Retrieved 5 products
+2026-11-12 16:48:43.622 +07:00 [INF] Executed endpoint 'gRPC - /product.ProductService/GetAllProducts'
+2026-11-12 16:48:43.638 +07:00 [INF] Request finished HTTP/2 POST http://localhost:7071/product.ProductService/GetAllProducts - 200 null application/grpc 1425.4288ms
+2026-11-12 16:51:02.047 +07:00 [WRN] Overriding address(es) 'http://localhost:7071, http://localhost:5017'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2026-11-12 16:51:02.156 +07:00 [INF] Now listening on: http://localhost:7071
+2026-11-12 16:51:02.160 +07:00 [INF] Now listening on: http://localhost:5017
+2026-11-12 16:51:02.168 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2026-11-12 16:51:02.206 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-11-12 16:51:02.206 +07:00 [INF] Hosting environment: Development
+2026-11-12 16:51:02.207 +07:00 [INF] Content root path: D:\work\Nano\Learning\ApiPractice\ProductGrpcService\ProductGrpcService

@@ -17,6 +17,7 @@ namespace ProductGrpcService.Config
 
             //CreateMap<Category, CategoryResponse>().ReverseMap();
             CreateMap<Inventory, InventoryResponse>().ReverseMap();
+            CreateMap<Product, ProductResponse>().ReverseMap();
 
         }
 
