@@ -1,0 +1,48 @@
+2026-11-16 15:15:20.349 +07:00 [WRN] Overriding address(es) 'http://localhost:7071, http://localhost:5017'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2026-11-16 15:15:20.797 +07:00 [INF] Now listening on: http://localhost:7071
+2026-11-16 15:15:20.812 +07:00 [INF] Now listening on: http://localhost:5017
+2026-11-16 15:15:20.870 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2026-11-16 15:15:21.114 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-11-16 15:15:21.120 +07:00 [INF] Hosting environment: Development
+2026-11-16 15:15:21.126 +07:00 [INF] Content root path: D:\work\Nano\Learning\ApiPractice\ProductGrpcService\ProductGrpcService
+2026-11-16 15:18:10.342 +07:00 [INF] Request starting HTTP/2 POST http://localhost:7071/product.ProductService/GetProductById - application/grpc null
+2026-11-16 15:18:10.433 +07:00 [INF] Executing endpoint 'gRPC - /product.ProductService/GetProductById'
+2026-11-16 15:18:14.446 +07:00 [WRN] Product with ID 0 was not found
+2026-11-16 15:21:58.422 +07:00 [WRN] Overriding address(es) 'http://localhost:7071, http://localhost:5017'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2026-11-16 15:21:58.502 +07:00 [INF] Now listening on: http://localhost:7071
+2026-11-16 15:21:58.507 +07:00 [INF] Now listening on: http://localhost:5017
+2026-11-16 15:21:58.520 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2026-11-16 15:21:58.579 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-11-16 15:21:58.581 +07:00 [INF] Hosting environment: Development
+2026-11-16 15:21:58.583 +07:00 [INF] Content root path: D:\work\Nano\Learning\ApiPractice\ProductGrpcService\ProductGrpcService
+2026-11-16 15:22:05.648 +07:00 [INF] Request starting HTTP/2 POST http://localhost:7071/product.ProductService/GetAllProducts - application/grpc null
+2026-11-16 15:22:05.738 +07:00 [INF] Executing endpoint 'gRPC - /product.ProductService/GetAllProducts'
+2026-11-16 15:22:08.138 +07:00 [INF] Retrieved 5 products
+2026-11-16 15:22:08.195 +07:00 [INF] Executed endpoint 'gRPC - /product.ProductService/GetAllProducts'
+2026-11-16 15:22:08.220 +07:00 [INF] Request finished HTTP/2 POST http://localhost:7071/product.ProductService/GetAllProducts - 200 null application/grpc 2632.8188ms
+2026-11-16 15:36:33.841 +07:00 [WRN] Overriding address(es) 'http://localhost:7071, http://localhost:5017'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2026-11-16 15:36:33.940 +07:00 [INF] Now listening on: http://localhost:7071
+2026-11-16 15:36:33.943 +07:00 [INF] Now listening on: http://localhost:5017
+2026-11-16 15:36:33.986 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2026-11-16 15:36:34.050 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-11-16 15:36:34.050 +07:00 [INF] Hosting environment: Development
+2026-11-16 15:36:34.051 +07:00 [INF] Content root path: D:\work\Nano\Learning\ApiPractice\ProductGrpcService\ProductGrpcService
+2026-11-16 15:36:56.745 +07:00 [INF] Request starting HTTP/2 POST http://localhost:7071/product.ProductService/GetProductById - application/grpc null
+2026-11-16 15:36:56.862 +07:00 [INF] Executing endpoint 'gRPC - /product.ProductService/GetProductById'
+2026-11-16 15:36:59.763 +07:00 [INF] Executed endpoint 'gRPC - /product.ProductService/GetProductById'
+2026-11-16 15:36:59.775 +07:00 [INF] Request finished HTTP/2 POST http://localhost:7071/product.ProductService/GetProductById - 200 null application/grpc 3084.8216ms
+2026-11-16 16:08:07.819 +07:00 [WRN] Overriding address(es) 'http://localhost:7071, http://localhost:5017'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2026-11-16 16:08:07.882 +07:00 [INF] Now listening on: http://localhost:7071
+2026-11-16 16:08:07.885 +07:00 [INF] Now listening on: http://localhost:5017
+2026-11-16 16:08:07.896 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2026-11-16 16:08:07.940 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-11-16 16:08:07.941 +07:00 [INF] Hosting environment: Development
+2026-11-16 16:08:07.943 +07:00 [INF] Content root path: D:\work\Nano\Learning\ApiPractice\ProductGrpcService\ProductGrpcService
+2026-11-16 16:08:16.442 +07:00 [INF] Request starting HTTP/2 POST http://localhost:7071/product.ProductService/GetProductById - application/grpc null
+2026-11-16 16:08:16.533 +07:00 [INF] Executing endpoint 'gRPC - /product.ProductService/GetProductById'
+2026-11-16 16:08:18.201 +07:00 [INF] Executed endpoint 'gRPC - /product.ProductService/GetProductById'
+2026-11-16 16:08:18.217 +07:00 [INF] Request finished HTTP/2 POST http://localhost:7071/product.ProductService/GetProductById - 200 null application/grpc 1820.2733ms
+2026-11-16 16:08:56.144 +07:00 [INF] Request starting HTTP/2 POST http://localhost:7071/product.ProductService/GetProductById - application/grpc null
+2026-11-16 16:08:56.150 +07:00 [INF] Executing endpoint 'gRPC - /product.ProductService/GetProductById'
+2026-11-16 16:08:56.185 +07:00 [INF] Executed endpoint 'gRPC - /product.ProductService/GetProductById'
+2026-11-16 16:08:56.187 +07:00 [INF] Request finished HTTP/2 POST http://localhost:7071/product.ProductService/GetProductById - 200 null application/grpc 43.4913ms

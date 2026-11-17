@@ -16,9 +16,7 @@ namespace ProductGrpcService.Services
         {
             try
             {
-                _logger.LogInformation(
-                    "Fetching all inventories. Operation: {Operation}",
-                    "GetAllInventories"
+                _logger.LogInformation("Fetching all inventories. Operation: {Operation}","GetAllInventories"
                 );
 
                 var entities = await _db.Inventories.ToListAsync();

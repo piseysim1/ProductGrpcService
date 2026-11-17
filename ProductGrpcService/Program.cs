@@ -2,18 +2,18 @@ using AutoMapper;
 using ProductGrpcService;
 using ProductGrpcService.Config;
 using ProductGrpcService.Extension;
-using ProductGrpcService.Messaging;
-using ProductGrpcService.Worker;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Add database context
 builder.Services.AddDbContext<SampleDbContext>();
 
-// config seriod log 
+// Configure Serilog logging
 builder.Configuration.AddJsonFile("appsettings.json")
                      .AddEnvironmentVariables();
 SerilogConfig.ConfigureSerilog(builder);
-// add config cros 
 
+// Add CORS policy
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
@@ -23,7 +23,8 @@ builder.Services.AddCors(options =>
               .AllowAnyHeader();
     });
 });
-// add auto mapper 
+
+// Configure and register AutoMapper
 using var loggerFactory = LoggerFactory.Create(b => b.AddConsole());
 var config = new MapperConfiguration(cfg => {
     cfg.AddProfile<AutoMapperConfig>();
@@ -31,13 +32,17 @@ var config = new MapperConfiguration(cfg => {
 IMapper mapper = config.CreateMapper();
 builder.Services.AddSingleton(mapper);
 
-// add config opentelemetry  
-OpenTelemetryConfig.ConfigureOpenTelemetry(builder);
+// Add OpenTelemetry configuration
+builder.ConfigureOpenTelemetry();
 
+// Add gRPC services
 builder.Services.AddGrpc();
+
 var app = builder.Build();
 
 using var scope = app.Services.CreateScope();
+
+// Map your gRPC services
 app.MapAllGrpcServices();
 
 app.Run();

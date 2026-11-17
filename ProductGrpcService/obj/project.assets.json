@@ -2,7 +2,7 @@
   "version": 4,
   "targets": {
     "net10.0": {
-      "AutoMapper/16.2.0": {
+      "AutoMapper/17.0.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.IdentityModel.JsonWebTokens": "8.14.0"
@@ -2016,26 +2016,24 @@
     }
   },
   "libraries": {
-    "AutoMapper/16.2.0": {
-      "sha512": "PE8HgPc5BZJnAFwjvDTE72gWL6YrYib+V7+vxtLXDYz0CH/fFgbVcwLUC9UHk5ALwspZ6Vbmoo6PHvseIk/0ZA==",
+    "AutoMapper/17.0.0": {
+      "sha512": "SQaIR+EKMkvyPqO1siHJXk286tjSSVSpZavFYxhMV4eq9DAL8sXMjNwqEZcu+C1R52aucNEnPkphhtGpGqoTVA==",
       "type": "package",
-      "path": "automapper/16.2.0",
+      "path": "automapper/17.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.md",
         "README.md",
-        "automapper.16.2.0.nupkg.sha512",
+        "automapper.17.0.0.nupkg.sha512",
         "automapper.nuspec",
         "icon.png",
         "lib/net10.0/AutoMapper.dll",
         "lib/net10.0/AutoMapper.xml",
+        "lib/net11.0/AutoMapper.dll",
+        "lib/net11.0/AutoMapper.xml",
         "lib/net471/AutoMapper.dll",
         "lib/net471/AutoMapper.xml",
-        "lib/net8.0/AutoMapper.dll",
-        "lib/net8.0/AutoMapper.xml",
-        "lib/net9.0/AutoMapper.dll",
-        "lib/net9.0/AutoMapper.xml",
         "lib/netstandard2.0/AutoMapper.dll",
         "lib/netstandard2.0/AutoMapper.xml"
       ]
@@ -5438,7 +5436,7 @@
   },
   "projectFileDependencyGroups": {
     "net10.0": [
-      "AutoMapper >= 16.2.0",
+      "AutoMapper >= 17.0.0",
       "Google.Protobuf >= 3.36.2",
       "Grpc.AspNetCore >= 2.64.0",
       "Grpc.Tools >= 2.85.0",
@@ -5514,7 +5512,7 @@
         "dependencies": {
           "AutoMapper": {
             "target": "Package",
-            "version": "[16.2.0, )"
+            "version": "[17.0.0, )"
           },
           "Google.Protobuf": {
             "target": "Package",

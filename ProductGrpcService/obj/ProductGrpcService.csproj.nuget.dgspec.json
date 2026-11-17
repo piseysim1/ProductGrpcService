@@ -54,7 +54,7 @@
           "dependencies": {
             "AutoMapper": {
               "target": "Package",
-              "version": "[16.2.0, )"
+              "version": "[17.0.0, )"
             },
             "Google.Protobuf": {
               "target": "Package",

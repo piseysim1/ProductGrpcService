@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v10.0": {
       "ProductGrpcService/1.0.0": {
         "dependencies": {
-          "AutoMapper": "16.2.0",
+          "AutoMapper": "17.0.0",
           "Google.Protobuf": "3.36.2",
           "Grpc.AspNetCore": "2.64.0",
           "HotChocolate.Data.EntityFramework": "16.7.3",
@@ -31,14 +31,14 @@
           "ProductGrpcService.dll": {}
         }
       },
-      "AutoMapper/16.2.0": {
+      "AutoMapper/17.0.0": {
         "dependencies": {
           "Microsoft.IdentityModel.JsonWebTokens": "8.14.0"
         },
         "runtime": {
           "lib/net10.0/AutoMapper.dll": {
-            "assemblyVersion": "16.0.0.0",
-            "fileVersion": "16.2.0.0"
+            "assemblyVersion": "17.0.0.0",
+            "fileVersion": "17.0.0.0"
           }
         }
       },
@@ -1424,12 +1424,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "AutoMapper/16.2.0": {
+    "AutoMapper/17.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-PE8HgPc5BZJnAFwjvDTE72gWL6YrYib+V7+vxtLXDYz0CH/fFgbVcwLUC9UHk5ALwspZ6Vbmoo6PHvseIk/0ZA==",
-      "path": "automapper/16.2.0",
-      "hashPath": "automapper.16.2.0.nupkg.sha512"
+      "sha512": "sha512-SQaIR+EKMkvyPqO1siHJXk286tjSSVSpZavFYxhMV4eq9DAL8sXMjNwqEZcu+C1R52aucNEnPkphhtGpGqoTVA==",
+      "path": "automapper/17.0.0",
+      "hashPath": "automapper.17.0.0.nupkg.sha512"
     },
     "Google.Protobuf/3.36.2": {
       "type": "package",
